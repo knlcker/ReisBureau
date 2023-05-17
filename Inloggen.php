@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
     <header class="header-account">
@@ -22,18 +23,18 @@
                 <img class="inloggen-image" src="Images/inloggen.png" alt="Login-image">
             </div>
             <div class="inloggen-information-container">
-                terug
+                <a href="index.php"><i class="fa-solid fa-arrow-left" style="color: #000000;"></i>Terug</a>
                 <div class="inloggen-registreren-container">
                     <div class="inloggen-container">
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
-                        <div>
-                            <input type="text" placeholder="E-Mail...">
-                            <div>
-                                E-Mail
-                            </div>
-                            <div>
-                                Wachtwoord
-                            </div>
+                        <form >
+                            <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..."></input>
+                            <input class="inloggen-input" type="text" name="password-login" placeholder="Wachtwoord..."></input>
+                            <submit></submit>
+                        </form>
+                        <div class="inloggen-email-wachtwoord">
+                            
+                            
                             <div>Wachtwoord vergeten</div>
                         </div>
                         <div>
