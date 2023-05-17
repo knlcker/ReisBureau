@@ -12,12 +12,8 @@
 </head>
 <body>
     <header class="header-main">
-        <div>
-            Image
-        </div>
-        <div>
-            Account
-        </div>
+        <img class="bookly-image" src="Images/Bookly.png" alt="Bookly-image">
+        <a href="inloggen.php">Account</a>
     </header>
     <main>
 
