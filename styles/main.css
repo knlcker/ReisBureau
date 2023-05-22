@@ -101,6 +101,14 @@ a{
     justify-content: space-between;
 }
 
+#inloggen{
+    display: flex;
+}
+
+#registreren{
+    display: none;
+}
+
 .bookly-image-inloggen{
     width: 250px;
     height: auto;
@@ -156,6 +164,7 @@ a{
     align-items: center;
     color: #FFFFFF;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .naar-registreren-container{
@@ -175,4 +184,5 @@ a{
 .inloggen-registratie-switch{
     color: #3F83D3;
     text-decoration: underline #3F83D3;
+    cursor: pointer;
 }
