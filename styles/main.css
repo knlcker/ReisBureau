@@ -173,6 +173,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 11pt;
 }
 
 .naar-registratie{
@@ -185,4 +186,54 @@ a{
     color: #3F83D3;
     text-decoration: underline #3F83D3;
     cursor: pointer;
+}
+
+.form-registratie{
+    height: auto;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.form-registratie-input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-top: 20px;
+}
+
+.form-registratie-compact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.registratie-voornaam{
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 2px #AFAFAF;
+    width: 30%;
+}
+
+.registratie-achternaam{
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 2px #AFAFAF;
+    width: 68%;
+}
+
+.registratie-land{
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 2px #AFAFAF;
+    width: 49%;
+    z-index: 5;
+}
+
+.registratie-geboortedatum{
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 2px #AFAFAF;
+    width: 49%;
 }

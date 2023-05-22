@@ -14,7 +14,7 @@
 <body>
     <header class="header-account">
         <div>
-            Image
+            <img class="bookly-image" src="Images/Bookly.png" alt="Bookly-image">
         </div>
     </header>
     <main>
@@ -27,13 +27,13 @@
                 <div class="inloggen-registreren-container">
                     <div id="inloggen" class="inloggen-container">
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
-                        <form class="form-inloggen" account="" method="POST">
+                        <form class="form-inloggen" action="account-inloggen-registratie.php" method="POST">
                             <div class="email-wachtwoord-input">
                                 <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..."></input>
                                 <input class="inloggen-input" type="text" name="password-login" placeholder="Wachtwoord..."></input>
                             </div>
                             <div class="inloggen-wachtwoord-vergeten">Wachtwoord vergeten?</div>
-                            <submit class="inloggen-submit">Log In</submit>
+                            <button class="inloggen-submit" type="submit">Log In</button>
                         </form>
                         <div class="naar-registreren-container">
                             <p>Heb je nog geen account?</p>
@@ -46,12 +46,26 @@
                     </div>
                     <div id="registreren" class="inloggen-container">
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
-                        <form class="form-inloggen" account="" method="POST">
-                            <div class="email-wachtwoord-input">
-                                <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..."></input>
-                                <input class="inloggen-input" type="text" name="password-login" placeholder="Wachtwoord..."></input>
+                        <form class="form-registratie" action="account-inloggen-registratie.php" method="POST">
+                            <div class="form-registratie-input-container">
+                                <div class="form-registratie-compact">
+                                    <input class="registratie-voornaam" type="text" name="registreren-voornaam" placeholder="Voornaam..."></input>
+                                    <input class="registratie-achternaam" type="text" name="registreren-achternaam" placeholder="Achternaam..."></input>
+                                </div>
+                                <div class="form-registratie-compact">
+                                    <select class="registratie-land" type="" name="registreren-land" placeholder="Land">
+                                        <option value="Nederland">Nederland</option>
+                                        <option value="Duitsland">Duitsland</option>
+                                        <option value="Engeland">Engeland</option>
+                                        <option value="Spanje">Spanje</option>
+                                        <option value="Amerika">Amerika</option>
+                                    </select>
+                                    <input class="registratie-geboortedatum" type="date" name="registreren-geboortedatum" placeholder="Geboortedatum"></input>
+                                </div>
+                                <input class="inloggen-input" type="email" name="registreren-email" placeholder="E-Mail..."></input>
+                                <input class="inloggen-input" type="text" name="registreren-wachtwoord" placeholder="Wachtwoord..."></input>
                             </div>
-                            <submit class="inloggen-submit">Maak account!</submit>
+                            <button class="inloggen-submit" type="submit" >Maak account!</button>
                         </form>
                         <div class="naar-registreren-container">
                             <p>Heb je al een account?</p>
