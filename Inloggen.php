@@ -27,19 +27,20 @@
                 <div class="inloggen-registreren-container">
                     <div class="inloggen-container">
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
-                        <form >
-                            <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..."></input>
-                            <input class="inloggen-input" type="text" name="password-login" placeholder="Wachtwoord..."></input>
-                            <submit></submit>
+                        <form class="form-inloggen" account="" method="POST">
+                            <div class="email-wachtwoord-input">
+                                <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..."></input>
+                                <input class="inloggen-input" type="text" name="password-login" placeholder="Wachtwoord..."></input>
+                            </div>
+                            <div class="inloggen-wachtwoord-vergeten">Wachtwoord vergeten?</div>
+                            <submit class="inloggen-submit">Log In</submit>
                         </form>
-                        <div class="inloggen-email-wachtwoord">
+                        <div class="naar-registreren-container">
+                            <p>Heb je nog geen account?</p>
+                            <div class="naar-registratie">
+                                <p>Maak er dan </p> <div class="inloggen-registratie-switch">hier</div> <p> een aan!</p>
+                            </div>
                             
-                            
-                            <div>Wachtwoord vergeten</div>
-                        </div>
-                        <div>
-                            <div>Log in</div>
-                            <div>Maak account</div>
                         </div>
                         
                     </div>

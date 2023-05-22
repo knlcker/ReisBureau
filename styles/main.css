@@ -108,6 +108,13 @@ a{
 
 /* Inloggen */
 
+.form-inloggen{
+    height: auto;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
 .inloggen-email-wachtwoord{
     display: flex;
     flex-direction: column;
@@ -118,4 +125,54 @@ a{
     border-radius: 15px;
     border: solid 2px #AFAFAF;
     width: 100%;
+}
+
+.email-wachtwoord-input{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.inloggen-wachtwoord-vergeten{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: #3F83D3;
+    text-decoration: underline #3F83D3;
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+.inloggen-submit{
+    width: 100%;
+    height: 60px;
+    background-color: #1C1C1C;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border-radius: 25px;
+}
+
+.naar-registreren-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.naar-registratie{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.inloggen-registratie-switch{
+    color: #3F83D3;
+    text-decoration: underline #3F83D3;
 }
