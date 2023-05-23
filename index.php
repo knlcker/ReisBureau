@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
 <body>
     <header class="header-main">
         <img class="bookly-image" src="Images/Bookly.png" alt="Bookly-image">
-        <a href="inloggen.php">Account</a>
+        <a href="inloggen.php">Inloggen</a>
     </header>
     <main>
 
