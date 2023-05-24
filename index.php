@@ -20,7 +20,12 @@
         <a href="inloggen.php">Inloggen</a>
     </header>
     <main>
-
+        <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
+        <div class="reis-search-container">
+            <input class="reis-search" type="search" placeholder="Bestemming..."></input>
+            <input class="reis-search" type="date" placeholder="Aankomst"></input>
+            <input class="reis-search" type="date" placeholder="Vertrek"></input>
+        </div>
     </main>
     <footer>
         
