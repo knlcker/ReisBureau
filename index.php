@@ -26,6 +26,11 @@
             <input class="reis-search" type="date" placeholder="Aankomst"></input>
             <input class="reis-search" type="date" placeholder="Vertrek"></input>
         </div>
+        <div class="reis-category-container">
+            <img class="reis-category-image" src="Images/indexzomer.png" alt="Zomer Reizen">
+            <img class="reis-category-image" src="Images/indexwinter.png" alt="Zomer Reizen">
+            <img class="reis-category-image" src="Images/indexextra.png" alt="Zomer Reizen">
+        </div>
     </main>
     <footer>
         
