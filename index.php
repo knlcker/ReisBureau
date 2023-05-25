@@ -13,6 +13,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <?php
+        $dsn = 'mysql:dbname=webapp2;host=127.0.0.1';
+        $user = 'root';
+        $password = '';
+
+        try {
+            $connectie = new PDO($dsn, $user, $password);
+        } catch (PDOException $e) {
+            echo "Verbinding werkt niet" . $e;
+        }
+    ?>
 </head>
 <body>
     <header class="header-main">
@@ -25,7 +36,7 @@
             <input class="reis-search" type="search" placeholder="Bestemming..."></input>
             <input class="reis-search" type="date" placeholder="Aankomst"></input>
             <input class="reis-search" type="date" placeholder="Vertrek"></input>
-        </div>
+        </div>        
     </main>
     <footer>
         
