@@ -47,31 +47,33 @@ a{
     background-color: red;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 100px;
+
 }
 .reis-search{
-    width: 400px;
+    width: 23.5%;
     height: 60px;
     border-radius: 15px;
     border: solid 1px #0000001a;
     margin-bottom: 10px;
     padding: 10px;
+    font-size: 14pt;
 }
 .reis-category-container{
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 100px;
+    padding-top: 50px;
 }
 .reis-category-image{
-    width: 400px;
-    height: 400px;
+    width: 23.5%;
+    height: 1%;
+    border-radius: 15px;
 }   
 /* Account */
 .header-account{

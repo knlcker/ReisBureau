@@ -33,14 +33,14 @@
     <main>
         <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
         <div class="reis-search-container">
-            <input class="reis-search" type="search" placeholder="Bestemming..."></input>
+            <input class="reis-search" type="search" placeholder="Locatie..."></input>
             <input class="reis-search" type="date" placeholder="Aankomst"></input>
             <input class="reis-search" type="date" placeholder="Vertrek"></input>
         </div>
         <div class="reis-category-container">
-            <img class="reis-category-image" src="Images/indexzomer.png" alt="Zomer Reizen">
-            <img class="reis-category-image" src="Images/indexwinter.png" alt="Zomer Reizen">
-            <img class="reis-category-image" src="Images/indexextra.png" alt="Zomer Reizen">
+            <img class="reis-category-image" src="Images/imageedit_2_2504844504.png" alt="Zomer Reizen">
+            <img class="reis-category-image" src="Images/imageedit_5_4238939840.png" alt="Zomer Reizen">
+            <img class="reis-category-image" src="Images/imageedit_8_2439431152.jpg" alt="Zomer Reizen">
         </div>     
     </main>
     <footer>
