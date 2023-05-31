@@ -38,9 +38,12 @@
             <input class="reis-search" type="date" placeholder="Vertrek"></input>
         </div>
         <div class="reis-category-container">
-            <img class="reis-category-image" src="Images/imageedit_2_2504844504.png" alt="Zomer Reizen">
+                <img class="reis-category-image" src="Images/imageedit_2_2504844504.png" alt="Zomer Reizen">
+                <div class="vacation-category0 vacation-category-text-decoration">Zomervakantie</div>
             <img class="reis-category-image" src="Images/imageedit_5_4238939840.png" alt="Zomer Reizen">
+            <div class="vacation-category1 vacation-category-text-decoration">Wintervakantie</div>
             <img class="reis-category-image" src="Images/imageedit_8_2439431152.jpg" alt="Zomer Reizen">
+            <div class="vacation-category2 vacation-category-text-decoration">Populaire Bestemmingen</div>
         </div>     
     </main>
     <footer>

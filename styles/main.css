@@ -52,7 +52,7 @@ a{
 
 }
 .reis-search{
-    width: 23.5%;
+    width: 25%;
     height: 60px;
     border-radius: 15px;
     border: solid 1px #0000001a;
@@ -69,12 +69,33 @@ a{
     justify-content: space-around;
     align-items: center;
     padding-top: 50px;
+
+    position: relative;
+    text-align: center;
 }
 .reis-category-image{
-    width: 23.5%;
-    height: 1%;
+    width: 25%;
+    height: auto;
     border-radius: 15px;
 }   
+.vacation-category0{
+    bottom: 60%;
+    right: 79.5%;
+}
+.vacation-category1{
+    bottom: 60%;
+    right: 46%;
+}
+.vacation-category2{
+    bottom: 60%;
+    right: 9.5%;
+}
+.vacation-category-text-decoration{
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    text-shadow: -1px 1px 0 black;
+}
 /* Account */
 .header-account{
     width: 100%;
