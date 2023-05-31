@@ -49,12 +49,14 @@ if (isset($_POST['registreren-voornaam']) && isset($_POST['registreren-achternaa
     $checkIfUserExists->execute([$new_email]);
 
     $account = $checkIfUserExists->fetch();
-        if ($account == true) {
-            header("Location: Inloggen.php");
-        } else {
-
+        if ($account == false) {
             $statement = $connectie->prepare("INSERT INTO users(user_firstname, user_lastname, user_country, user_date, user_email, user_password, user_admin_rights, user_owner) VALUES(?, ?, ?, ?, ?, ?, ?,?)");
             $statement->execute([$new_voornaam, $new_achternaam, $new_land, $new_geboortedatum, $new_email, $new_wachtwoord, FALSE, FALSE]);
+
+            $getAccount = $connectie->prepare("SELECT * FROM users WHERE user_email = ?");
+            $getAccount->execute([$new_email]);
+
+            $account = $getAccount->fetch();
 
             $_SESSION['user_id'] = $account['user_id'];
             $_SESSION['user_firstname'] = $account['user_firstname'];
@@ -67,6 +69,8 @@ if (isset($_POST['registreren-voornaam']) && isset($_POST['registreren-achternaa
             $_SESSION['user_owner'] = $account['user_owner'];
 
             header("Location: index.php");
+        } else {
+            header("Location: Inloggen.php");
         }
 };
 ?>

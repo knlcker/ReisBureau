@@ -43,8 +43,8 @@
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
                         <form class="form-inloggen" action="account-inloggen-registratie.php" method="POST">
                             <div class="email-wachtwoord-input">
-                                <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..." required></input>
-                                <input class="inloggen-input" type="password" name="password-login" placeholder="Wachtwoord..." required></input>
+                                <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..." max="50" required></input>
+                                <input class="inloggen-input" type="password" name="password-login" placeholder="Wachtwoord..." max="20" required></input>
                             </div>
                             <div class="inloggen-wachtwoord-vergeten">Wachtwoord vergeten?</div>
                             <button class="inloggen-submit" type="submit">Log In</button>
@@ -63,8 +63,8 @@
                         <form class="form-registratie" action="account-inloggen-registratie.php" method="POST">
                             <div class="form-registratie-input-container">
                                 <div class="form-registratie-compact">
-                                    <input class="registratie-voornaam" type="text" name="registreren-voornaam" placeholder="Voornaam..." required></input>
-                                    <input class="registratie-achternaam" type="text" name="registreren-achternaam" placeholder="Achternaam..." required></input>
+                                    <input class="registratie-voornaam" type="text" name="registreren-voornaam" placeholder="Voornaam..." max="20" required></input>
+                                    <input class="registratie-achternaam" type="text" name="registreren-achternaam" placeholder="Achternaam..." max="40" required></input>
                                 </div>
                                 <div class="form-registratie-compact">
                                     <select class="registratie-land" type="" name="registreren-land" placeholder="Land" required>
@@ -76,8 +76,8 @@
                                     </select>
                                     <input class="registratie-geboortedatum" type="date" name="registreren-geboortedatum" placeholder="Geboortedatum" required></input>
                                 </div>
-                                <input class="inloggen-input" type="email" name="registreren-email" placeholder="E-Mail..." required></input>
-                                <input class="inloggen-input" type="password" name="registreren-wachtwoord" placeholder="Wachtwoord..." required></input>
+                                <input class="inloggen-input" type="email" name="registreren-email" placeholder="E-Mail..." max="50" required></input>
+                                <input class="inloggen-input" type="password" name="registreren-wachtwoord" placeholder="Wachtwoord..." max="20" required></input>
                             </div>
                             <button class="inloggen-submit" type="submit" >Maak account!</button>
                         </form>
