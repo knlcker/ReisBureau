@@ -44,7 +44,7 @@
                         <form class="form-inloggen" action="account-inloggen-registratie.php" method="POST">
                             <div class="email-wachtwoord-input">
                                 <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..." required></input>
-                                <input class="inloggen-input" type="text" name="password-login" placeholder="Wachtwoord..." required></input>
+                                <input class="inloggen-input" type="password" name="password-login" placeholder="Wachtwoord..." required></input>
                             </div>
                             <div class="inloggen-wachtwoord-vergeten">Wachtwoord vergeten?</div>
                             <button class="inloggen-submit" type="submit">Log In</button>
