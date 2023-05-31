@@ -30,7 +30,7 @@
         <img class="bookly-image" src="Images/Bookly.png" alt="Bookly-image">
         <?php 
             if(isset($_SESSION['user_firstname'])){
-                echo '<a href="account-inloggen-registratie.php">' . $_SESSION['user_firstname'] . '</a>';
+                echo '<a href="account.php">' . $_SESSION['user_firstname'] . '</a>';
             } else echo '<a href="Inloggen.php">Inloggen</a>';
         ?>
     </header>

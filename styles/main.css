@@ -309,3 +309,34 @@ button{
     border: solid 2px #AFAFAF;
     width: 49%;
 }
+
+/* Account.php */
+.account-menu-contents{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    padding: 120px 150px 50px 100px;
+}
+
+.account-menu{
+    width: 35%;
+    height: 100%;
+}
+
+.account-menu a{
+    color: #000000;
+}
+
+.account-menu-profile-options{
+    padding-left: 30px;
+}
+
+.account-profile-picture{
+    font-size: 80pt
+}
+
+.account-contents{
+    width: 65%;
+    height: 100%;
+}
