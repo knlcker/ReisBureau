@@ -28,7 +28,11 @@
 <body>
     <header class="header-main">
         <img class="bookly-image" src="Images/Bookly.png" alt="Bookly-image">
-        <a href="inloggen.php">Inloggen</a>
+        <?php 
+            if(isset($_SESSION['user_firstname'])){
+                echo '<a href="account-inloggen-registratie.php">' . $_SESSION['user_firstname'] . '</a>';
+            } else echo '<a href="Inloggen.php">Inloggen</a>';
+        ?>
     </header>
     <main>
         <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
