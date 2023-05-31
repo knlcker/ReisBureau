@@ -11,6 +11,10 @@ session_start();
         echo "Verbinding werkt niet" . $e;
     }
 
+if () {
+
+};
+
 if (isset($_POST['registreren-voornaam']) && isset($_POST['registreren-achternaam']) && isset($_POST['registreren-land']) && isset($_POST['registreren-geboortedatum']) && isset($_POST['registreren-email']) && isset($_POST['registreren-wachtwoord'])){
     $new_voornaam = $_POST['registreren-voornaam'];
     $new_achternaam = $_POST['registreren-achternaam'];
