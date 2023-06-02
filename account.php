@@ -36,20 +36,74 @@
             <div class="account-menu">
                 <a href="index.php"><i class="fa-regular fa-circle-left" style="color: #000000;"></i>Terug</a>
                 <div class="account-menu-profile-options">
-                    <div class="account-profile-picture">
+                    <div class="account-profile-picture-and-name">
                         <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
+                        <div class="account-profile-name">
+                            <?php echo $_SESSION['user_firstname'] . " " . $_SESSION['user_lastname'];?>
+                        </div>
                     </div>
                     <div class="account-menu-options">
-                        
+                        <div id="account-menu-account-informatie" onclick="activeAccountInformatie()">Account Informatie</div>
+                        <div id="account-menu-mijn-boekingen" onclick="activeMijnBoekingen()">Mijn Boekingen</div>
+                        <?php 
+                        if($_SESSION['user_admin_rights'] == true){
+                            echo '<div id="account-menu-admin-panel" onclick="activeAdminPanel()">Admin Panel</div>';
+                        };
+                        if($_SESSION['user_admin_rights'] == true){
+                            echo '<div id="account-menu-owner-panel" onclick="activeOwnerPanel()">Owner Panel</div>';
+                        };
+
+                        $accountCurrentOption = "Account Informatie"; 
+                        ?>
                     </div>
                 </div>
             </div>
-            <div class="account-contents"></div>
+            <div class="account-contents">
+                <div class="account-content-name-and-logout">
+                    <div class="account-content-name">
+                        <?php echo $accountCurrentOption; ?>
+                    </div>
+                    <a href="logout.php" class="account-logout-button">Uitloggen<i class="fa-solid fa-arrow-right-from-bracket" style="color: #EEEFEF;"></i></a>
+                </div>
+                <div class="account-content-container"></div>
+            </div>
         </div>
        
     </main>
-    <?php 
-        include_once("footer.php");
-    ?>
+
+    <script>
+        function activeAccountInformatie(){
+            document.getElementById("account-menu-account-informatie").style.color = "#4987FF";
+            document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
+            document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
+            document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
+            <?php $accountCurrentOption = "Account Informatie"; ?>
+        };
+
+        function activeMijnBoekingen(){
+            document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
+            document.getElementById("account-menu-mijn-boekingen").style.color = "#4987FF";
+            document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
+            document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
+            <?php $accountCurrentOption = "Mijn Boekingen"; ?>
+        };
+
+        function activeAdminPanel(){
+            document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
+            document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
+            document.getElementById("account-menu-admin-panel").style.color = "#4987FF";
+            document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
+            <?php $accountCurrentOption = "Admin Panel"; ?>
+        };
+
+        function activeOwnerPanel(){
+            document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
+            document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
+            document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
+            document.getElementById("account-menu-owner-panel").style.color = "#4987FF";
+            <?php $accountCurrentOption = "Owner Panel"; ?>
+        };
+
+    </script>
 </body>
 </html>
