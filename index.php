@@ -34,7 +34,7 @@
             } else echo '<a href="Inloggen.php">Inloggen</a>';
         ?>
     </header>
-    <main>
+    <main class="main-index">
         <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
         <div class="reis-search-container">
             <input class="reis-search" type="search" placeholder="Locatie..."></input>
@@ -46,20 +46,24 @@
                 <img class="reis-category-image" src="Images/imageedit_2_2504844504.png" alt="Zomer Reizen">
                 <div class="vacation-category vacation-category-text-decoration">Zomervakantie</div>
                 <div class="vacation-category1 vacation-category-text-decoration">ontsnap naar de zon</div>
-                <button class="vacation-category2 vacation-category-text-decoration">Ontdek</button>
+                <a href="/" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
             <div class="category-container">
                 <img class="reis-category-image" src="Images/imageedit_5_4238939840.png" alt="Zomer Reizen">
                 <div class="vacation-category vacation-category-text-decoration">Wintervakantie</div>
+                <div class="vacation-category1 vacation-category-text-decoration">Voor een winter bestemming</div>
+                <a href="/" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
             <div class="category-container">
                 <img class="reis-category-image" src="Images/imageedit_8_2439431152.jpg" alt="Zomer Reizen">
                 <div class="vacation-category vacation-category-text-decoration">Populaire Bestemmingen</div>
+                <div class="vacation-category1 vacation-category-text-decoration">Even er tussen uit</div>
+                <a href="/" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
         </div>     
     </main>
-    <footer>
-        
-    </footer>
-</body>
+    <?php 
+        include_once("footer.php");
+    ?>
+</body>     
 </html>
