@@ -94,6 +94,9 @@
             </div>
         </div>
     </main>
+    <?php 
+        include_once("footer.php");
+    ?>
 
     <script>
         function switchNaarRegistreren(){
