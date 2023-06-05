@@ -65,7 +65,23 @@
                     </div>
                     <a href="logout.php" class="account-logout-button">Uitloggen<i class="fa-solid fa-arrow-right-from-bracket" style="color: #EEEFEF;"></i></a>
                 </div>
-                <div class="account-content-container"></div>
+                <div class="account-content-container">
+                    <div id="account-content-account-information">
+                        <div class="account-content-account-information-component-container">
+                            <div class="account-content-account-information-component">
+                                <div class="account-content-account-information-component"></div>
+                            </div>
+                            <div class="account-content-account-information-component"></div>
+                            <div class="account-content-account-information-component"></div>
+                            <div class="account-content-account-information-component"></div>
+                        </div>
+                        <div class="account-content-account-information-change-container">
+                            <div class="account-content-account-information-change-button">
+                                Wijzig Gegevens
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
        
