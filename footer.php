@@ -30,9 +30,9 @@
             </div>
             <div class="footer-bottom-container">
                 <div class="footer-bottom">
-                    <a href="/" class="footer-category-text-header color-light-blue">Voorwaarden</a>
-                    <a href="/" class="footer-category-text-header color-light-blue">Privacy</a>
-                    <a href="/" class="footer-category-text-header color-light-blue">Cookie</a>
+                    <a href="voorwaarden.php" class="footer-category-text-header color-light-blue">Voorwaarden</a>
+                    <a href="privacy-policy.php" class="footer-category-text-header color-light-blue">Privacy</a>
+                    <a href="cookie-policy.php" class="footer-category-text-header color-light-blue">Cookie</a>
                 </div>
             </div>
         </div>
