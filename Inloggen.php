@@ -95,7 +95,6 @@
         </div>
     </main>
 
-
     <script>
         function switchNaarRegistreren(){
             document.getElementById("inloggen").style.display = "none";

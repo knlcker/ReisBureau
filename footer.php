@@ -14,8 +14,8 @@
                 </div>
                 <div class="footer-text-container">
                 <h1 class="footer-category-text-header">Account</h1>
-                    <a href="/" class="footer-category-text">Log-uit</a>
-                    <a href="/" class="footer-category-text">Log-in</a>
+                    <a href="logout.php" class="footer-category-text">Log-uit</a>
+                    <a href="Inloggen.php" class="footer-category-text">Log-in</a>
                 </div>
                 <div class="footer-text-container">
                     <div>
