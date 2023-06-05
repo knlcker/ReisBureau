@@ -64,7 +64,7 @@
                             <div class="form-registratie-input-container">
                                 <div class="form-registratie-compact">
                                     <input class="registratie-voornaam" type="text" name="registreren-voornaam" placeholder="Voornaam..." maxlength="20" required></input>
-                                    <input class="registratie-achternaam" type="text" name="registreren-achternaam" placeholder="Achternaam..." maxlength="40" required></input>
+                                    <input class="registratie-achternaam" type="text" name="registreren-achternaam" placeholder="Achternaam..." maxlength="35" required></input>
                                 </div>
                                 <div class="form-registratie-compact">
                                     <select class="registratie-land" type="" name="registreren-land" placeholder="Land" required>
@@ -76,7 +76,7 @@
                                     </select>
                                     <input class="registratie-geboortedatum" type="date" name="registreren-geboortedatum" placeholder="Geboortedatum" required></input>
                                 </div>
-                                <input class="inloggen-input" type="email" name="registreren-email" placeholder="E-Mail..." maxlength="50" required></input>
+                                <input class="inloggen-input" type="email" name="registreren-email" placeholder="E-Mail..." maxlength="35" required></input>
                                 <input class="inloggen-input" type="password" name="registreren-wachtwoord" placeholder="Wachtwoord..." maxlength="20" required></input>
                             </div>
                             <button class="inloggen-submit" type="submit" >Maak account!</button>
@@ -94,9 +94,7 @@
             </div>
         </div>
     </main>
-    <?php 
-        include_once("footer.php");
-    ?>
+
 
     <script>
         function switchNaarRegistreren(){
