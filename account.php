@@ -69,11 +69,41 @@
                     <div id="account-content-account-information">
                         <div class="account-content-account-information-component-container">
                             <div class="account-content-account-information-component">
-                                <div class="account-content-account-information-component"></div>
+                                <div class="account-content-account-information-component-title-description">
+                                    <div class="account-content-account-information-component-title">Naam</div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_firstname'] . " " . $_SESSION['user_lastname'];?></div>
+                                </div>
+                                <div class="account-content-account-information-component-icon">
+                                    <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
+                                </div>
                             </div>
-                            <div class="account-content-account-information-component"></div>
-                            <div class="account-content-account-information-component"></div>
-                            <div class="account-content-account-information-component"></div>
+                            <div class="account-content-account-information-component">
+                                <div class="account-content-account-information-component-title-description">
+                                    <div class="account-content-account-information-component-title">E-Mail</div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_email'];?></div>
+                                </div>
+                                <div class="account-content-account-information-component-icon">
+                                    <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
+                                </div>
+                            </div>
+                            <div class="account-content-account-information-component">
+                                <div class="account-content-account-information-component-title-description">
+                                    <div class="account-content-account-information-component-title">Land</div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_country'];?></div>
+                                </div>
+                                <div class="account-content-account-information-component-icon">
+                                    <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
+                                </div>
+                            </div>
+                            <div class="account-content-account-information-component">
+                                <div class="account-content-account-information-component-title-description">
+                                    <div class="account-content-account-information-component-title">Geboortedatum</div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_date'];?></div>
+                                </div>
+                                <div class="account-content-account-information-component-icon">
+                                    <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="account-content-account-information-change-container">
                             <div class="account-content-account-information-change-button">
@@ -90,6 +120,7 @@
     <script>
         function activeAccountInformatie(){
             document.getElementById("account-menu-account-informatie").style.color = "#4987FF";
+            document.getElementById("account-content-account-information").style.display = "flex";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
@@ -98,6 +129,7 @@
 
         function activeMijnBoekingen(){
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
+            document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#4987FF";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
@@ -106,6 +138,7 @@
 
         function activeAdminPanel(){
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
+            document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
             document.getElementById("account-menu-admin-panel").style.color = "#4987FF";
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
@@ -114,6 +147,7 @@
 
         function activeOwnerPanel(){
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
+            document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
             document.getElementById("account-menu-owner-panel").style.color = "#4987FF";
