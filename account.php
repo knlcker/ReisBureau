@@ -111,6 +111,38 @@
                             </div>
                         </div>
                     </div>
+                    <div id="account-content-mijn-boekingen">
+
+                    </div>
+                    <div id="account-content-admin-panel">
+                        <div class="account-content-admin-panel-options">
+                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reis-aanmaken">
+                                Reis Aanmaken
+                            </div>
+                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reizen">
+                                Alle Reizen
+                            </div>
+                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-geboekte-reizen">
+                                Geboekte Reizen
+                            </div>
+                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-locaties-beheren">
+                                Locaties Beheren
+                            </div>
+                        </div>
+                        <div class="account-content-admin-panel-search">
+                                <div class="account-content-admin-panel-search-location"></div>
+                            </div>
+                        <div class="account-content-admin-panel-content-container">
+                            <div class="admin-panel-reis-item"></div>
+                            <div class="admin-panel-reis-item"></div>
+                            <div class="admin-panel-reis-item"></div>
+                            <div class="admin-panel-reis-item"></div>
+
+                        </div>
+                    </div>
+                    <div id="account-content-owner-panel">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,8 +154,11 @@
             document.getElementById("account-menu-account-informatie").style.color = "#4987FF";
             document.getElementById("account-content-account-information").style.display = "flex";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
+            document.getElementById("account-content-mijn-boekingen").style.display = "none";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
+            document.getElementById("account-content-admin-panel").style.display = "none";
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
+            document.getElementById("account-content-owner-panel").style.display = "none";
             <?php $accountCurrentOption = "Account Informatie"; ?>
         };
 
@@ -131,8 +166,11 @@
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#4987FF";
+            document.getElementById("account-content-mijn-boekingen").style.display = "flex";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
+            document.getElementById("account-content-admin-panel").style.display = "none";
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
+            document.getElementById("account-content-owner-panel").style.display = "none";
             <?php $accountCurrentOption = "Mijn Boekingen"; ?>
         };
 
@@ -140,8 +178,11 @@
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
+            document.getElementById("account-content-mijn-boekingen").style.display = "none";
             document.getElementById("account-menu-admin-panel").style.color = "#4987FF";
+            document.getElementById("account-content-admin-panel").style.display = "flex";
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
+            document.getElementById("account-content-owner-panel").style.display = "none";
             <?php $accountCurrentOption = "Admin Panel"; ?>
         };
 
@@ -149,8 +190,11 @@
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
+            document.getElementById("account-content-mijn-boekingen").style.display = "none";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
+            document.getElementById("account-content-admin-panel").style.display = "none";
             document.getElementById("account-menu-owner-panel").style.color = "#4987FF";
+            document.getElementById("account-content-owner-panel").style.display = "flex";
             <?php $accountCurrentOption = "Owner Panel"; ?>
         };
 
