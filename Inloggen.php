@@ -62,17 +62,24 @@
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
                         <form class="form-registratie" action="account-inloggen-registratie.php" method="POST">
                             <div class="form-registratie-input-container">
-                                <div class="form-registratie-compact">
+                                <div class="form-registratie-compact">  
                                     <input class="registratie-voornaam" type="text" name="registreren-voornaam" placeholder="Voornaam..." maxlength="20" required></input>
                                     <input class="registratie-achternaam" type="text" name="registreren-achternaam" placeholder="Achternaam..." maxlength="35" required></input>
                                 </div>
                                 <div class="form-registratie-compact">
                                     <select class="registratie-land" type="" name="registreren-land" placeholder="Land" required>
-                                        <option value="Nederland">Nederland</option>
-                                        <option value="Duitsland">Duitsland</option>
-                                        <option value="Engeland">Engeland</option>
-                                        <option value="Spanje">Spanje</option>
-                                        <option value="Amerika">Amerika</option>
+                                    <?php
+                                            $statement = $connectie->prepare("SELECT * FROM landen ORDER BY land_name ASC");
+                                            $statement->execute([]);
+
+                                            if ($statement->rowCount() == 0) {
+                                                echo "Er zijn geen zoekresultaten gevonden!";
+                                            } else {
+                                                while ($item = $statement->fetch()) {
+                                                    echo'<option value="' . $item['land_id'] . '">' . $item['land_name'] . '</option>';
+                                                }
+                                            }
+                                        ?>
                                     </select>
                                     <input class="registratie-geboortedatum" type="date" name="registreren-geboortedatum" placeholder="Geboortedatum" required></input>
                                 </div>

@@ -20,7 +20,7 @@ if (isset($_POST['email-login']) && isset($_POST['password-login'])) {
 
     $account = $checkIfUserExists->fetch();
         if ($account == false) {
-            header("Location: Inloggen.php");
+            header("Location: inloggen.php");
         } else {
 
             $_SESSION['user_id'] = $account['user_id'];
@@ -70,7 +70,7 @@ if (isset($_POST['registreren-voornaam']) && isset($_POST['registreren-achternaa
 
             header("Location: index.php");
         } else {
-            header("Location: Inloggen.php");
+            header("Location: inloggen.php");
         }
 };
 ?>

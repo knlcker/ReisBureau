@@ -31,7 +31,7 @@
         <?php 
             if(isset($_SESSION['user_firstname'])){
                 echo '<a href="account.php">' . $_SESSION['user_firstname'] . '</a>';
-            } else echo '<a href="Inloggen.php">Inloggen</a>';
+            } else echo '<a href="inloggen.php">Inloggen</a>';
         ?>
     </header>
     <main class="main-index">

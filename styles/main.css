@@ -358,7 +358,6 @@ a{
     color: #434343;
     font-weight: 600;
     font-size: 12pt;
-    text-overflow: ellipsis;
 }
 
 .account-menu-options{
@@ -438,8 +437,6 @@ a{
     width: 100%;
     min-width: 400px;
     height: 80%;
-    padding-top: 50px;
-    overflow: scroll;
 }
 
 #account-content-account-information{
@@ -449,6 +446,7 @@ a{
     flex-direction: column;
     gap: 1.5em;
     padding: 0 50px 25px 0;
+    overflow: scroll;
 }
 
 .account-content-account-information-component-container{
@@ -480,13 +478,11 @@ a{
     height: auto;
     font-size: 14pt;
     font-weight: 600;
-    text-overflow: ellipsis;
 }
 
 .account-content-account-information-component-description{
     height: auto;
     font-size: 11pt;
-    text-overflow: ellipsis;
 }
 
 .account-content-account-information-component-icon{
@@ -633,4 +629,72 @@ a{
     flex-direction: column;
     padding: 50px;
 
+}
+
+
+/* Admin Panel */
+
+#account-content-admin-panel{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 0 50px 25px 0;
+}
+
+.account-content-admin-panel-options{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 0 25px;
+}
+
+.account-content-admin-panel-options-button{
+    width: 175px;
+    height: 60px;
+    background-color: #585858;
+    padding: 20px;
+    color: #EEEFEF;
+    font-size: 11pt;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px #0000004D;
+
+}
+
+.account-content-admin-panel-options-button:hover{
+    background-color: #373737;
+    cursor: pointer;
+}
+
+.account-content-admin-panel-options-button:active{
+    background-color: rgb(47, 47, 47);
+    box-shadow: 0px 2px 4px 0px #0000004D;
+}
+
+.account-content-admin-panel-content-container{
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 10px 25px 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    overflow: scroll;
+}
+
+.admin-panel-reis-item{
+    width: 100%;
+    height: 175px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px #0000004D;
 }
