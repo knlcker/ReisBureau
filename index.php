@@ -46,19 +46,19 @@
                 <img class="reis-category-image" src="Images/imageedit_2_2504844504.png" alt="Zomer Reizen">
                 <div class="vacation-category vacation-category-text-decoration">Zomervakantie</div>
                 <div class="vacation-category1 vacation-category-text-decoration">ontsnap naar de zon</div>
-                <a href="/" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
+                <a href="homepage-reiszoeken.php" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
             <div class="category-container">
                 <img class="reis-category-image" src="Images/imageedit_5_4238939840.png" alt="Zomer Reizen">
                 <div class="vacation-category vacation-category-text-decoration">Wintervakantie</div>
                 <div class="vacation-category1 vacation-category-text-decoration">Voor een winter bestemming</div>
-                <a href="/" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
+                <a href="homepage-reiszoeken.php" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
             <div class="category-container">
                 <img class="reis-category-image" src="Images/imageedit_8_2439431152.jpg" alt="Zomer Reizen">
                 <div class="vacation-category vacation-category-text-decoration">Populaire Bestemmingen</div>
                 <div class="vacation-category1 vacation-category-text-decoration">Even er tussen uit</div>
-                <a href="/" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
+                <a href="homepage-reiszoeken.php" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
         </div>     
     </main>

@@ -57,10 +57,10 @@ a{
 .reis-search{
     width: 23.5%;
     height: 60px;
-    border-radius: 15px;
+    border-radius: 25px;
     border: solid 1px #0000001a;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 20px;
     font-size: 14pt;
 }
 .reis-category-container{
@@ -358,6 +358,7 @@ a{
     color: #434343;
     font-weight: 600;
     font-size: 12pt;
+    text-overflow: ellipsis;
 }
 
 .account-menu-options{
@@ -437,6 +438,8 @@ a{
     width: 100%;
     min-width: 400px;
     height: 80%;
+    padding-top: 50px;
+    overflow: scroll;
 }
 
 #account-content-account-information{
@@ -478,11 +481,13 @@ a{
     height: auto;
     font-size: 14pt;
     font-weight: 600;
+    text-overflow: ellipsis;
 }
 
 .account-content-account-information-component-description{
     height: auto;
     font-size: 11pt;
+    text-overflow: ellipsis;
 }
 
 .account-content-account-information-component-icon{
@@ -631,7 +636,6 @@ a{
 
 }
 
-
 /* Admin Panel */
 
 #account-content-admin-panel{
@@ -698,3 +702,82 @@ a{
     border-radius: 10px;
     box-shadow: 0px 2px 4px 0px #0000004D;
 }
+
+.reis-locaties-container{
+    padding-top: 100px;
+    gap: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reis-container{
+    width: 70%;
+    height: 275px;
+   
+
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+.left-container-reis-homepage{
+    width: 35%;
+    height: 100%;
+}
+.middle-container-reis-homepage{
+    width: 100%;
+    height: 100%;
+    background-color: darkgrey;
+    padding: 50px 0 0 50px;
+    border-radius: 0 25px 25px 0;
+
+    display: flex;
+    flex-direction: row;
+}
+.middle{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.right-container-reis-homepage{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1em;
+}
+.days-container{
+    width: 100%;
+    height: 100%;
+}
+.price{
+
+}
+.reis-img{
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    border-radius: 25px 0 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.location{
+
+}
+.accommodation{
+
+}
+.divider{
+    height: 150px;
+}
+.reviews{
+    padding-bottom: 1em;
+}
+
