@@ -42,12 +42,12 @@
              <input class="reis-search" type="date" placeholder="Vertrek"></input>
             </div>
 
-            <div class="reis-locaties-container">
+        <div class="reis-locaties-container">
             <?php
 
             if(isset($_GET['search'])){
                 $search_input = $_GET['search'];
-                $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description) LIKE ?");
+                $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location) LIKE ?");
                 $resultSet->execute(["%" . $search_input . "%"]);
             } else{
                 $resultSet = $connectie->prepare("SELECT * FROM reizen");
@@ -55,16 +55,31 @@
             }
             while ($item = $resultSet->fetch()) {
                 echo '
-                        
+                <div class="reis-container">
+                    <div class="left-container-reis-homepage">
+                        <div class="reis-img">foto</div>
+                    </div>
+                
+                    <div class="middle-container-reis-homepage">
+                        <div class="middle">
+                            <div class="location">' . $item['reis_location'] .'</div>
+                            <div class="accommodation">' . $item['reis_title'] .'</div>
+                            <div class="divider"></div>
+                            <div class="reviews">' . $item['reis_reviews'] .'</div>
+                        </div>
+                        <div class="right-container-reis-homepage">
+                            <div class="price">€ ' . $item['reis_price'] .'</div>
+                        </div>
+                    </div>
+                    
+                
+                </div>
                         ';
             }
             ?>
         </div>
 
-        <div class="reis-container">
-            <div class="item1">foto</div>
-            <div class="item2">amsterdam</div>
-        </div>
+       
 
     </main>
     <?php 
