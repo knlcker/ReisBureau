@@ -116,9 +116,6 @@
                     </div>
                     <div id="account-content-admin-panel">
                         <div class="account-content-admin-panel-options">
-                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reis-aanmaken">
-                                Reis Aanmaken
-                            </div>
                             <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reizen">
                                 Alle Reizen
                             </div>
@@ -128,16 +125,52 @@
                             <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-locaties-beheren">
                                 Locaties Beheren
                             </div>
+                            <a href="reis-aanmaken-editen.php" class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reis-aanmaken">
+                                Reis Aanmaken
+                            </a>
                         </div>
                         <div class="account-content-admin-panel-search">
                                 <div class="account-content-admin-panel-search-location"></div>
                             </div>
                         <div class="account-content-admin-panel-content-container">
-                            <div class="admin-panel-reis-item"></div>
-                            <div class="admin-panel-reis-item"></div>
-                            <div class="admin-panel-reis-item"></div>
-                            <div class="admin-panel-reis-item"></div>
 
+                            <?php
+                                $AlleReizen = $connectie->prepare("SELECT * FROM reizen ORDER BY reis_gemiddelde_review DESC");
+                                $AlleReizen->execute([]);
+
+                                if ($AlleReizen->rowCount() == 0) {
+                                    echo "Er zijn geen reizen gevonden!";
+                                } else {
+                                    while ($item = $AlleReizen->fetch()) {
+                                        echo'
+                                        <div class="admin-panel-reis-item">
+                                            <div class="admin-panel-reis-item-reis-container-picture-location">
+                                                <div class="admin-panel-reis-item-picture"></div>
+                                                <div class="admin-panel-reis-item-location">
+                                                    <div class="admin-panel-reis-item-location-country">' . $item['reis_location_country'] . '</div>
+                                                    <div class="admin-panel-reis-item-location-city">' . $item['reis_location_city'] . '</div>
+                                                </div>
+                                            </div>
+                                            <div class="admin-panel-reis-item-reis-container-details-edit">
+                                                <div class="admin-panel-reis-item-price-and-reviews">
+                                                    <div class="admin-panel-reis-item-price">
+                                                        <div class="admin-panel-reis-item-price-title">P/P/N</div>
+                                                        <div class="admin-panel-reis-item-price-per-night">' . $item['reis_price'] . '</div>
+                                                    </div>
+                                                    <div class="admin-panel-reis-item-reviews">
+                                                        <div class="admin-panel-reis-item-reviews-aantal">' . $item['reis_aantal_reviews'] . ' Reviews</div>
+                                                        <div class="admin-panel-reis-item-reviews-gemiddelde">' . $item['reis_gemiddelde_review'] . ' / 10</div>
+                                                    </div>
+                                                </div>
+                                                <div class="admin-panel-reis-item-reis-container-edit-delete">
+                                                    <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i></div>
+                                                    <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-trash" style="color: #000000;"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                     <div id="account-content-owner-panel">
