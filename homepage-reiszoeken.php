@@ -65,14 +65,16 @@
                             <div class="location">' . $item['reis_location_country'] . " , " . $item['reis_location_city'].'</div>
                             <div class="accommodation">' . $item['reis_title'] .'</div>
                             <div class="divider"></div>
-                            <div class="reviews">' . $item['reis_reviews'] .'</div>
+                            <div class="reviews-container">
+                                <div class="reviews">' . $item['reis_gemiddelde_review'] .'/10</div>
+                                <div class="reviews">' . $item['reis_aantal_reviews'] .'(beoordelingen)</div>
+                            </div>
                         </div>
                         <div class="right-container-reis-homepage">
                             <div class="price">€ ' . $item['reis_price'] .'</div>
                         </div>
                     </div>
-                    
-                
+
                 </div>
                         ';
             }
