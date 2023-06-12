@@ -23,6 +23,7 @@
         } catch (PDOException $e) {
             echo "Verbinding werkt niet" . $e;
         }
+        $date = date('Y-m-d');
     ?>
 </head>
 <body>
@@ -36,11 +37,12 @@
     </header>
     <main class="main-index">
         <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
-        <div class="reis-search-container">
-            <input class="reis-search" type="search" placeholder="Locatie..."></input>
-            <input class="reis-search" type="date" placeholder="Aankomst"></input>
-            <input class="reis-search" type="date" placeholder="Vertrek"></input>
-        </div>
+        <form class="reis-search-container" action="homepage-reiszoeken.php" method="GET">
+            <input class="reis-search" name="search_location" type="search" placeholder="Locatie..." ></input>
+            <input class="reis-search" name="search_date_start" type="date" min="<?php echo $date;?>" placeholder="Aankomst"></input>
+            <input class="reis-search" name="search_date_end" type="date" min="<?php echo $date;?>" placeholder="Vertrek"></input>
+        </form>
+        <div id="reis-category">
         <div class="reis-category-container">
             <div class="category-container">
                 <img class="reis-category-image" src="Images/imageedit_2_2504844504.png" alt="Zomer Reizen">
@@ -60,7 +62,8 @@
                 <div class="vacation-category1 vacation-category-text-decoration">Even er tussen uit</div>
                 <a href="homepage-reiszoeken.php" class="vacation-category2 vacation-category-text-decoration ontdek-button">Ontdek</a>
             </div>
-        </div>     
+        </div>
+        </div>   
     </main>
     <?php 
         include_once("footer.php");
