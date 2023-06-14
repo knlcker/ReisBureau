@@ -23,6 +23,8 @@
     } catch (PDOException $e) {
         echo "Verbinding werkt niet" . $e;
     }
+
+    $date = date('Y-m-d');
     ?>
     </head>
     <body>
@@ -34,20 +36,20 @@
             <div class="terug">
                 <a href="index.php"><i class="fa-regular fa-circle-left" style="color: #000000;"></i>Terug</a>
             </div>
-            <div class="reis-aanmaken-container">
+            <div id="reis-aanmaken" class="reis-aanmaken-container">
                 <form action="reis-toevoegen-bewerken.php" method="POST" class="reis-aanmaken">
                     <label for="Locatie">Locatie Naam</label><br>
                     <input class="reis-Invulvelden" type="text" name="Locatie" placeholder="Locatie Naam...">
                     <label for="Beschrijving">Overnachting Beschrijving</label><br>
                     <input class="reis-Invulvelden" type="text" name="Beschrijving" placeholder="Overnachting Beschrijving...">
                     <label for="Prijs">Prijs Per Nacht</label><br>
-                    <input class="reis-Invulvelden" id="prijs"  type="price" name="Prijs" placeholder="Prijs Per Nacht...">
+                    <input class="reis-Invulvelden" class="prijs"  type="price" name="Prijs" placeholder="Prijs Per Nacht...">
                     <label for="Start-datum">Start</label><br>
-                    <input class="reis-Invulvelden" id="datum-aanmaken" type="date" name="Start-datum">
+                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Start-datum">
                     <label for="Eind-datum">Einde</label><br>
-                    <input class="reis-Invulvelden" id="datum-aanmaken" type="date" name="Eind-datum">
+                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Eind-datum">
                     <label for="beschrijving-reis">Beschrijving reis</label><br>
-                    <input class="reis-Invulvelden" id="Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis...">
+                    <input class="reis-Invulvelden" class="Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis...">
                     <label for="hoofd-afbeelding">Hoofd Afbeelding</label><br>
                     <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg">
                     <label for="hoofd-afbeelding">Overige Afbeelding</label><br>
