@@ -35,7 +35,7 @@
                 <a href="index.php"><i class="fa-regular fa-circle-left" style="color: #000000;"></i>Terug</a>
             </div>
             <div class="reis-aanmaken-container">
-                <form action=" " class="reis-aanmaken">
+                <form action="reis-toevoegen-bewerken.php" method="POST" class="reis-aanmaken">
                     <label for="Locatie">Locatie Naam</label><br>
                     <input class="reis-Invulvelden" type="text" name="Locatie" placeholder="Locatie Naam...">
                     <label for="Beschrijving">Overnachting Beschrijving</label><br>
@@ -49,9 +49,9 @@
                     <label for="beschrijving-reis">Beschrijving reis</label><br>
                     <input class="reis-Invulvelden" id="Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis...">
                     <label for="hoofd-afbeelding">Hoofd Afbeelding</label><br>
-                    <input class="reis-Invulvelden" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg">
+                    <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg">
                     <label for="hoofd-afbeelding">Overige Afbeelding</label><br>
-                    <input class="reis-Invulvelden" type="file" name="overige-afbeelding" placeholder="Overige Afbeelding..." accept="image/png, image/jpeg" multiple>
+                    <input class="files" type="file" name="overige-afbeelding" placeholder="Overige Afbeelding..." accept="image/png, image/jpeg" multiple>
                     <input class="reis-aanmaken-submit" type="submit">
                 </form>
             </div>
