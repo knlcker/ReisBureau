@@ -892,6 +892,8 @@ label{
     width: 50%;
     height: 4%;
     padding: 5px;
+    border-radius: 5px;
+    border: #000000 solid;
 }
 #Beschrijving-reis{
     width: 100%;
@@ -915,4 +917,9 @@ label{
 }
 .reis-aanmaken-submit:hover{
     background-color: #4e89fe;
+}
+.files{
+    width: 50%;
+    height: 4%;
+    padding: 5px;
 }
