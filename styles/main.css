@@ -775,6 +775,7 @@ a{
 
 }
 .reis-locaties-container{
+    width: 100%;
     padding-top: 100px;
     gap: 20px;
 
@@ -816,10 +817,10 @@ a{
     height: 100%;
 
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
-    padding: 1em;
+    flex-direction: column;
+    padding: 0 1em 1em 1em;
 }
 .days-container{
     width: 100%;
@@ -922,4 +923,27 @@ label{
     width: 50%;
     height: 4%;
     padding: 5px;
+}
+.form-reis-informatie{
+    width: 30%;
+    height: 15%;
+    margin-bottom: 140px;
+}
+.reis-informatie-button{
+    width: 100%;
+    height: 100%;
+    background-color: darkgray;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.reis-informatie-button:hover{
+    background-color: gray;
+}
+.reis-informatie-container{
+    width: 70%;
+    height: auto;
+    min-height: 700px;
+    background-color: red;
 }

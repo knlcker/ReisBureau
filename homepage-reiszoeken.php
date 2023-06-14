@@ -143,15 +143,23 @@
                                     <div class="price">€ ' . $item['reis_price'] .'</div>
                                 </div>
                             </div>
-    
+
+                            <div class="right-container-reis-homepage">
+                                <form action="reis-informatie.php" method="GET" class="form-reis-informatie">
+                                    <input type="hidden" name="reis_id_info" value="' . $item['reis_id'] . '"></input>
+                                    <button type="submit" class="reis-informatie-button">bekijk reis</button>
+                                </form>
+                                <div class="price">€ ' . $item['reis_price'] .'</div>
+                            </div>
                         </div>
+                    </div>
+                ';
+   
                         ';
                 }
             }
             }
             ?>
-        </div>
-
        
 
     </main>
