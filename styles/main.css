@@ -896,14 +896,14 @@ label{
     border-radius: 5px;
     border: #000000 solid;
 }
-#Beschrijving-reis{
+.Beschrijving-reis{
     width: 100%;
     height: 20%;
 }
-#prijs{
+.prijs{
     width: 20%;
 }
-#datum-aanmaken{
+.datum-aanmaken{
     width: 20%;
 }
 .reis-aanmaken-submit{
