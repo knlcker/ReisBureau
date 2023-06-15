@@ -25,6 +25,7 @@
     }
 
     $date = date('Y-m-d');
+
     ?>
     </head>
     <body>
@@ -34,24 +35,39 @@
             </div>
         </header>
             <div class="terug">
-                <a href="index.php"><i class="fa-regular fa-circle-left" style="color: #000000;"></i>Terug</a>
+                <a href="account.php"><i class="fa-regular fa-circle-left" style="color: #000000;"></i>Terug</a>
             </div>
             <div id="reis-aanmaken" class="reis-aanmaken-container">
                 <form action="reis-toevoegen-bewerken.php" method="POST" class="reis-aanmaken">
-                    <label for="Locatie">Locatie Naam</label><br>
-                    <input class="reis-Invulvelden" type="text" name="Locatie" placeholder="Locatie Naam...">
+                <label for="Locatie-Land">Locatie Land</label><br>
+                    <select class="reis-Invulvelden" type="" name="Locatie-land" placeholder="Land" required>
+                        <?php
+                            $statement = $connectie->prepare("SELECT * FROM landen ORDER BY land_name ASC");
+                            $statement->execute([]);
+
+                            if ($statement->rowCount() == 0) {
+                                echo "Er zijn geen zoekresultaten gevonden!";
+                            } else {
+                                while ($item = $statement->fetch()) {
+                                    echo'<option value="' . $item['land_name'] . '">' . $item['land_name'] . '</option>';
+                                }
+                            }
+                        ?>
+                    </select>
+                    <label for="Locatie-stad">Locatie Stad</label><br>
+                    <input class="reis-Invulvelden" type="text" name="Locatie-stad" placeholder="Locatie Stad..." required>
                     <label for="Beschrijving">Overnachting Beschrijving</label><br>
-                    <input class="reis-Invulvelden" type="text" name="Beschrijving" placeholder="Overnachting Beschrijving...">
+                    <input class="reis-Invulvelden" type="text" name="Beschrijving" placeholder="Overnachting Beschrijving..." required>
                     <label for="Prijs">Prijs Per Nacht</label><br>
-                    <input class="reis-Invulvelden" class="prijs"  type="price" name="Prijs" placeholder="Prijs Per Nacht...">
+                    <input class="reis-Invulvelden" class="prijs"  type="number" name="Prijs" placeholder="Prijs Per Nacht..." required>
                     <label for="Start-datum">Start</label><br>
-                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Start-datum">
+                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Start-datum" min="<?php echo $date; ?>" value="<?php echo $date; ?>" required>
                     <label for="Eind-datum">Einde</label><br>
-                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Eind-datum">
+                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Eind-datum" min="<?php echo $date; ?>" required>
                     <label for="beschrijving-reis">Beschrijving reis</label><br>
-                    <input class="reis-Invulvelden" class="Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis...">
+                    <textarea class="reis-Invulvelden Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis..." required></textarea>
                     <label for="hoofd-afbeelding">Hoofd Afbeelding</label><br>
-                    <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg">
+                    <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg" required>
                     <label for="hoofd-afbeelding">Overige Afbeelding</label><br>
                     <input class="files" type="file" name="overige-afbeelding" placeholder="Overige Afbeelding..." accept="image/png, image/jpeg" multiple>
                     <input class="reis-aanmaken-submit" type="submit">
