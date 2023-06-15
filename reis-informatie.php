@@ -48,13 +48,38 @@
                 while ($item = $resultSet->fetch()) {
                     echo '
                     <div class="reis-informatie-container">
-                        <div class=""></div>
+                        <div class="afbeelding-container">
+                            <img class="main-afbeelding" src="Images/indexzomer.png" alt=""></img>
+                            <div class="extra-afbeeldingen-container">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-links-boven" src="Images/indexzomer.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-rechts-boven" src="Images/indexzomer.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-links-onder" src="Images/indexzomer.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-rechts-onder" src="Images/indexzomer.png" alt="">
+                            </div>
+                        </div>
+                        <div class="informatie-text-container">
+                            <div class="reis-informatie-locatie">' . $item['reis_location_country'] . " , " . $item['reis_location_city'] . '</div>
+                            <div class="reis-informatie-title">' . $item['reis_title'] . '</div>
+                            <div class="reis-reviews">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="reis-informatie-title">' . $item['reis_gemiddelde_review'] . '/10 - Beoordeeld</div>
+                            <div class="reis-voorzieningen">
+                                <div>Populaire voorzieningen</div>
+                                <div>Airco</div>
+                                <div>Gratis wifi</div>
+                                <div>Ontbijt inbegrepen</div>
+                            </div>
+                        </div>
                     </div>
                             ';
                 }
             
             ?>
-           
        
        
 
