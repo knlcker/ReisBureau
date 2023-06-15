@@ -76,7 +76,7 @@
                                                 echo "Er zijn geen zoekresultaten gevonden!";
                                             } else {
                                                 while ($item = $statement->fetch()) {
-                                                    echo'<option value="' . $item['land_id'] . '">' . $item['land_name'] . '</option>';
+                                                    echo'<option value="' . $item['land_name'] . '">' . $item['land_name'] . '</option>';
                                                 }
                                             }
                                         ?>

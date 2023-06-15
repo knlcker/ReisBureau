@@ -1,8 +1,9 @@
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +26,7 @@
     }
     ?>
 </head>
+
 <body>
     <header class="header-account">
         <div>
@@ -39,21 +41,21 @@
                     <div class="account-profile-picture-and-name">
                         <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
                         <div class="account-profile-name">
-                            <?php echo $_SESSION['user_firstname'] . " " . $_SESSION['user_lastname'];?>
+                            <?php echo $_SESSION['user_firstname'] . " " . $_SESSION['user_lastname']; ?>
                         </div>
                     </div>
                     <div class="account-menu-options">
                         <div id="account-menu-account-informatie" onclick="activeAccountInformatie()">Account Informatie</div>
                         <div id="account-menu-mijn-boekingen" onclick="activeMijnBoekingen()">Mijn Boekingen</div>
-                        <?php 
-                        if($_SESSION['user_admin_rights'] == true){
+                        <?php
+                        if ($_SESSION['user_admin_rights'] == true) {
                             echo '<div id="account-menu-admin-panel" onclick="activeAdminPanel()">Admin Panel</div>';
                         };
-                        if($_SESSION['user_admin_rights'] == true){
+                        if ($_SESSION['user_admin_rights'] == true) {
                             echo '<div id="account-menu-owner-panel" onclick="activeOwnerPanel()">Owner Panel</div>';
                         };
 
-                        $accountCurrentOption = "Account Informatie"; 
+                        $accountCurrentOption = "Account Informatie";
                         ?>
                     </div>
                 </div>
@@ -71,7 +73,7 @@
                             <div class="account-content-account-information-component">
                                 <div class="account-content-account-information-component-title-description">
                                     <div class="account-content-account-information-component-title">Naam</div>
-                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_firstname'] . " " . $_SESSION['user_lastname'];?></div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_firstname'] . " " . $_SESSION['user_lastname']; ?></div>
                                 </div>
                                 <div class="account-content-account-information-component-icon">
                                     <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
@@ -80,7 +82,7 @@
                             <div class="account-content-account-information-component">
                                 <div class="account-content-account-information-component-title-description">
                                     <div class="account-content-account-information-component-title">E-Mail</div>
-                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_email'];?></div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_email']; ?></div>
                                 </div>
                                 <div class="account-content-account-information-component-icon">
                                     <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
@@ -89,7 +91,7 @@
                             <div class="account-content-account-information-component">
                                 <div class="account-content-account-information-component-title-description">
                                     <div class="account-content-account-information-component-title">Land</div>
-                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_country'];?></div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_country']; ?></div>
                                 </div>
                                 <div class="account-content-account-information-component-icon">
                                     <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
@@ -98,7 +100,7 @@
                             <div class="account-content-account-information-component">
                                 <div class="account-content-account-information-component-title-description">
                                     <div class="account-content-account-information-component-title">Geboortedatum</div>
-                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_date'];?></div>
+                                    <div class="account-content-account-information-component-description"><?php echo $_SESSION['user_date']; ?></div>
                                 </div>
                                 <div class="account-content-account-information-component-icon">
                                     <i class="fa-regular fa-circle-user" style="color: #000000;"></i>
@@ -116,25 +118,25 @@
                     </div>
                     <div id="account-content-admin-panel">
                         <div class="account-content-admin-panel-options">
-                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reizen">
+                            <div class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reizen" onclick="adminPanelAlleReizen()">
                                 Alle Reizen
                             </div>
-                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-geboekte-reizen">
+                            <div class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-geboekte-reizen" onclick="adminPanelGeboekteReizen()">
                                 Geboekte Reizen
                             </div>
-                            <div class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-locaties-beheren">
+                            <div class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-locaties-beheren" onclick="adminPanelLocatiesBeheren()">
                                 Locaties Beheren
                             </div>
-                            <a href="reis-aanmaken-editen.php" class ="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reis-aanmaken">
+                            <a href="reis-aanmaken-editen.php" class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reis-aanmaken">
                                 Reis Aanmaken
                             </a>
                         </div>
                         <div class="account-content-admin-panel-search">
-                                <div class="account-content-admin-panel-search-location"></div>
-                            </div>
+                            <div class="account-content-admin-panel-search-location"></div>
+                        </div>
                         <div class="account-content-admin-panel-content-container">
-
-                            <?php
+                            <div id="account-content-admin-panel-content-container-alle-reizen">
+                                <?php
                                 $AlleReizen = $connectie->prepare("SELECT * FROM reizen ORDER BY reis_gemiddelde_review DESC");
                                 $AlleReizen->execute([]);
 
@@ -142,10 +144,12 @@
                                     echo "Er zijn geen reizen gevonden!";
                                 } else {
                                     while ($item = $AlleReizen->fetch()) {
-                                        echo'
+                                        echo '
                                         <div class="admin-panel-reis-item">
                                             <div class="admin-panel-reis-item-reis-container-picture-location">
-                                                <div class="admin-panel-reis-item-picture"></div>
+                                                <div class="admin-panel-reis-item-picture">
+                                                    <img class="account-reis-main-images" src="reis-main-images/' . $item['reis_main_photo']  . '" alt="reis-image">
+                                                </div>
                                                 <div class="admin-panel-reis-item-location">
                                                     <div class="admin-panel-reis-item-location-country">' . $item['reis_location_country'] . '</div>
                                                     <div class="admin-panel-reis-item-location-city">' . $item['reis_location_city'] . '</div>
@@ -170,7 +174,21 @@
                                         </div>';
                                     }
                                 }
-                            ?>
+                                ?>
+
+                            </div>
+
+                            <div id="account-content-admin-panel-content-container-geboekte-reizen"></div>
+                            <div id="account-content-admin-panel-content-container-locaties-beheren">
+                                <div class="locaties-beheren-container">
+                                    <div class="locaties-beheren-buttons">
+                                        
+                                    </div>
+                                    <div id="locatie-toevoegen"></div>
+                                    <div id="locatie-verwijderen"></div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div id="account-content-owner-panel">
@@ -179,11 +197,11 @@
                 </div>
             </div>
         </div>
-       
+
     </main>
 
     <script>
-        function activeAccountInformatie(){
+        function activeAccountInformatie() {
             document.getElementById("account-menu-account-informatie").style.color = "#4987FF";
             document.getElementById("account-content-account-information").style.display = "flex";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
@@ -195,7 +213,7 @@
             <?php $accountCurrentOption = "Account Informatie"; ?>
         };
 
-        function activeMijnBoekingen(){
+        function activeMijnBoekingen() {
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#4987FF";
@@ -207,7 +225,7 @@
             <?php $accountCurrentOption = "Mijn Boekingen"; ?>
         };
 
-        function activeAdminPanel(){
+        function activeAdminPanel() {
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
@@ -219,7 +237,26 @@
             <?php $accountCurrentOption = "Admin Panel"; ?>
         };
 
-        function activeOwnerPanel(){
+        function adminPanelAlleReizen(){
+            document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "flex";
+            document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "none";
+            document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "none";
+        }
+
+        function adminPanelGeboekteReizen(){
+            document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "none";
+            document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "flex";
+            document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "none";
+        }
+
+        function adminPanelLocatiesBeheren(){
+            document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "none";
+            document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "none";
+            document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "flex";
+        }
+
+
+        function activeOwnerPanel() {
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
             document.getElementById("account-menu-mijn-boekingen").style.color = "#6F6F6F";
@@ -230,7 +267,7 @@
             document.getElementById("account-content-owner-panel").style.display = "flex";
             <?php $accountCurrentOption = "Owner Panel"; ?>
         };
-
     </script>
 </body>
+
 </html>
