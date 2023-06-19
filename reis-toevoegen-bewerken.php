@@ -23,7 +23,7 @@ if(isset($_POST['Locatie-land']) && isset($_POST['Locatie-stad']) && isset($_POS
     $new_locatie_beschrijving_reis = $_POST['Beschrijving-reis'];
     $new_locatie_hoofd_afbeelding = $_POST['hoofd-afbeelding'];
 
-    $reis_toevoegen = $connectie->prepare("INSERT into reizen(reis_title, reis_description, reis_location_country, reis_location_city, reis_price, reis_available_start, reis_available_end, reis_main_photo) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+    $reis_toevoegen = $connectie->prepare("INSERT into reizen(reis_title, reis_description, reis_location_country, reis_location_city, reis_price, reis_available_start, reis_available_end, reis_main_photo, reis_status) VALUES(?, ?, ?, ?, ?, ?, ?, ?, 'OPEN')");
     $reis_toevoegen->execute([$new_locatie_overnachting_beschrijving, $new_locatie_beschrijving_reis, $new_locatie_land, $new_locatie_stad, $new_locatie_prijs, $new_locatie_start_datum, $new_locatie_eind_datum, $new_locatie_hoofd_afbeelding]);
 }
 

@@ -63,7 +63,7 @@ function isPresent($waarde)
         <div class="reis-locaties-container">
             <?php
             if (count($_GET) == 0) {
-                $resultSet = $connectie->prepare("SELECT * FROM reizen");
+                $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_status = 'OPEN'");
                 $resultSet->execute([]);
             } else {
 
@@ -74,33 +74,33 @@ function isPresent($waarde)
                     if ($search_date_start >= $search_date_end) {
                         echo "Vertrek datum kan niet eerder dan of gelijk zijn als aankomst, Pas uw zoekopdracht aan!";
                     } else {
-                        $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_available_start <= ? AND reis_available_end >= ?");
+                        $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_available_start <= ? AND reis_available_end >= ? AND reis_status = 'OPEN'");
                         $resultSet->execute(["%" . $search_input . "%", $search_date_start, $search_date_end]);
                     }
                 } else if (isPresent($_GET['search_location']) && !isPresent($_GET['search_date_start']) && !isPresent($_GET['search_date_end'])) {
                     $search_input = $_GET['search_location'];
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ?");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_status = 'OPEN'");
                     $resultSet->execute(["%" . $search_input . "%"]);
                 }
 
                 // Geen locatie en enddate, wel start date
                 else if (!isPresent($_GET['search_location']) && isPresent($_GET['search_date_start']) && !isPresent($_GET['search_date_end'])) {
                     $search_date_start = $_GET['search_date_start'];
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_available_start <= ?");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_available_start <= ? AND reis_status = 'OPEN'");
                     $resultSet->execute([$search_date_start]);
                 } else if (!isPresent($_GET['search_location']) && !isPresent($_GET['search_date_start']) && isPresent($_GET['search_date_end'])) {
                     $search_date_end = $_GET['search_date_end'];
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_available_end >= ?");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_available_end >= ? AND reis_status = 'OPEN'");
                     $resultSet->execute([$search_date_end]);
                 } else if (isPresent($_GET['search_location']) && isPresent($_GET['search_date_start']) && !isPresent($_GET['search_date_end'])) {
                     $search_input = $_GET['search_location'];
                     $search_date_start = $_GET['search_date_start'];
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_available_start <= ?");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_available_start <= ? AND reis_status = 'OPEN'");
                     $resultSet->execute(["%" . $search_input . "%", $search_date_start]);
                 } else if (isPresent($_GET['search_location']) && !isPresent($_GET['search_date_start']) && isPresent($_GET['search_date_end'])) {
                     $search_input = $_GET['search_location'];
                     $search_date_end = $_GET['search_date_end'];
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_available_end >= ?");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE concat(reis_title, reis_description, reis_location_country, reis_location_city) LIKE ? AND reis_available_end >= ? AND reis_status = 'OPEN'");
                     $resultSet->execute(["%" . $search_input . "%", $search_date_end]);
                 } else if (!isPresent($_GET['search_location']) && isPresent($_GET['search_date_start']) && isPresent($_GET['search_date_end'])) {
                     $search_date_start = $_GET['search_date_start'];
@@ -108,11 +108,11 @@ function isPresent($waarde)
                     if ($search_date_start >= $search_date_end) {
                         echo "Vertrek datum kan niet eerder dan of gelijk zijn als aankomst, Pas uw zoekopdracht aan!";
                     } else {
-                        $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_available_start <= ? AND reis_available_end >= ?");
+                        $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_available_start <= ? AND reis_available_end >= ? AND reis_status = 'OPEN'");
                         $resultSet->execute([$search_date_start, $search_date_end]);
                     }
                 } else {
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen AND reis_status = 'OPEN'");
                     $resultSet->execute([]);
                 }
             }
