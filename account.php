@@ -114,7 +114,7 @@ session_start();
                         </div>
                     </div>
                     <div id="account-content-mijn-boekingen">
-
+                        
                     </div>
                     <div id="account-content-admin-panel">
                         <div class="account-content-admin-panel-options">

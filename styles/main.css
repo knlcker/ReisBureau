@@ -1106,4 +1106,37 @@ a{
     justify-content: center;
     align-items: center;
 }
+.over-ons-container{
+    height: 195vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.over-ons-text{
+    width: 50%;
+    height: 65%;
+    background-color: white;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 17px -3px#002ec4;
+    -moz-box-shadow: 0px 0px 17px -3px #7888bd;
+    box-shadow: 0px 0px 17px -3px #466ff6;
+    margin: 100px;
+    padding: 20px;
+    
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.line-over-ons{
+    width: 90%;
+    margin: 20px;
+    box-shadow: 0px 0px 10px 5px #466ff6;
+}
+.over-ons-text-p{
+    padding: 50px;
+}
 

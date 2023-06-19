@@ -3,8 +3,9 @@
             <div class="footer-top">
                 <div class="footer-text-container">
                     <h1 class="footer-category-text-header">Klantenservice</h1>
-                    <a href="/" class="footer-category-text">Contact</a>
-                    <a href="/" class="footer-category-text">Over ons</a>
+                    <a href="/" class="footer-category-text">Contact Us</a>
+                    <div class="footer-category-text">contact-bookly@gmail.com</div>
+                    <a href="over-ons.html" class="footer-category-text">Over ons</a>
             	</div>
                 <div class="footer-text-container">
                     <h1 class="footer-category-text-header">Reizen</h1>
