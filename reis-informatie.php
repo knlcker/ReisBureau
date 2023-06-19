@@ -77,15 +77,15 @@
                             </div>
                         </div>
                         <div class="reis-boeken-button">
-                                <form action="reis-informatie.php" method="GET" class="form-reis-boeken">
-                                    <input type="hidden" name="reis_id_info" value="' . $item['reis_id'] . '"></input>
+                                <form action="reis-boekingen.php" method="POST" class="form-reis-boeken">
+                                    <input type="hidden" name="reis_id_to_book" value="' . $item['reis_id'] . '"></input>
                                     <div class="invulvelden-reis-boeken">
                                         <label for="aantal-persoonen">Aantal persoonen: </label><br>
-                                        <input type="number" name="aantal-persoonen" value="' . $item[''] .'"</input>
+                                        <input type="number" name="aantal-persoonen" min="1" max="' . $item['reis_max_people'] .'" value="1" required</input>
                                         <label for="datum-aankomst">Aankomst datum: </label><br>
-                                        <input type="date" name="datum-aankomst" value="' . $item[''] .'"</input>
+                                        <input type="date" name="datum-aankomst" min="' . $date . '" max="' . $item['reis_available_end'] . '" value="' . $date .'" required</input>
                                         <label for="datum-vertrek">Vertrek datum: </label><br>
-                                        <input type="date" name="datum-vertrek" value="' . $item[''] .'"</input>
+                                        <input type="date" name="datum-vertrek" min="' . $date . '" max="' . $item['reis_available_end'] . '" required </input>
                                     </div>
                                     <button type="submit" class="reis-informatie-button">boeken</button>
                                 </form>

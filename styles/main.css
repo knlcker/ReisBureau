@@ -523,6 +523,29 @@ a{
 
 }
 
+#account-content-mijn-boekingen{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0 50px 25px 0;
+}
+
+.account-content-mijn-boekingen-content-container{
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 10px 25px 0 25px;
+    overflow: scroll;
+}
+
+.account-content-mijn-boekingen-content-container-alle-boekingen{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
 /* Admin Panel */
 
 #account-content-admin-panel{

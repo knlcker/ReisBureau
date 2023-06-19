@@ -114,7 +114,26 @@ session_start();
                         </div>
                     </div>
                     <div id="account-content-mijn-boekingen">
-                        
+
+                        <div class="account-content-mijn-boekingen-content-container">
+                            <div id="account-content-mijn-boekingen-content-container-alle-boekingen">
+                                <?php
+                                    $mijnGeboekteReizen = $connectie->prepare("SELECT * FROM boekingen WHERE user_id = ? ORDER BY boeking_reis_start ASC");
+                                    $mijnGeboekteReizen->execute([$_SESSION['user_id']]);
+
+                                    if ($mijnGeboekteReizen->rowCount() == 0) {
+                                        echo "Je hebt geen reizen geboekt!";
+                                    } else {
+                                        while ($mijnReisItem = $mijnGeboekteReizen->fetch()) {
+                                            echo '
+                                                <div class="admin-panel-reis-item">
+                                                    
+                                                </div>';
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
                     </div>
                     <div id="account-content-admin-panel">
                         <div class="account-content-admin-panel-options">
