@@ -137,7 +137,7 @@ session_start();
                         <div class="account-content-admin-panel-content-container">
                             <div id="account-content-admin-panel-content-container-alle-reizen">
                                 <?php
-                                $AlleReizen = $connectie->prepare("SELECT * FROM reizen ORDER BY reis_gemiddelde_review DESC");
+                                $AlleReizen = $connectie->prepare("SELECT * FROM reizen WHERE reis_status = 'OPEN' ORDER BY reis_gemiddelde_review DESC");
                                 $AlleReizen->execute([]);
 
                                 if ($AlleReizen->rowCount() == 0) {
@@ -168,7 +168,12 @@ session_start();
                                                 </div>
                                                 <div class="admin-panel-reis-item-reis-container-edit-delete">
                                                     <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i></div>
-                                                    <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-trash" style="color: #000000;"></i></div>
+                                                    <form action="reis-delete.php" method="POST">
+                                                        <input type="hidden" name="reis_id_to_delete" value="' . $item['reis_id'] . '" ></input>
+                                                        <button type="submit" class="delete-button">
+                                                            <i class="fa-solid fa-trash clickable" style="color: #000000;"></i>
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>';
@@ -182,9 +187,16 @@ session_start();
                             <div id="account-content-admin-panel-content-container-locaties-beheren">
                                 <div class="locaties-beheren-container">
                                     <div class="locaties-beheren-buttons">
-                                        
+                                        <div class="locaties-beheren-button">Toevoegen</div>
+                                        <div class="locaties-beheren-button">Verwijderen</div>
                                     </div>
-                                    <div id="locatie-toevoegen"></div>
+                                    <div id="locatie-toevoegen">
+                                        <form class="form-land-toevoegen">
+                                            <label for="new-country">Nieuw Land</label><br>
+                                            <input type="text" name="new-country">
+                                            <button class="locaties-beheren-submit-button" type="submit">Toevoegen</button>
+                                        </form>
+                                    </div>
                                     <div id="locatie-verwijderen"></div>
                                 </div>
                             </div>
@@ -237,19 +249,19 @@ session_start();
             <?php $accountCurrentOption = "Admin Panel"; ?>
         };
 
-        function adminPanelAlleReizen(){
+        function adminPanelAlleReizen() {
             document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "flex";
             document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "none";
             document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "none";
         }
 
-        function adminPanelGeboekteReizen(){
+        function adminPanelGeboekteReizen() {
             document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "none";
             document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "flex";
             document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "none";
         }
 
-        function adminPanelLocatiesBeheren(){
+        function adminPanelLocatiesBeheren() {
             document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "none";
             document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "none";
             document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "flex";

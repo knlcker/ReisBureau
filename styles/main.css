@@ -530,7 +530,7 @@ a{
     height: 100%;
     display: none;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1em;
     padding: 0 50px 25px 0;
 }
 
@@ -600,17 +600,58 @@ a{
     width: 100%;
     height: auto;
     min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.locaties-beheren-buttons{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.locaties-beheren-button{
+    width: 150px;
+    height: 100%;
+    background-color: rgb(220, 107, 107);
+    color: #EEEFEF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
 }
 
 #locatie-toevoegen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
 
+.form-land-toevoegen{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
 }
 
 #locatie-toevoegen{
     
 }
 
-
+.locaties-beheren-submit-button{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(143, 225, 143);
+    color: #383838;
+    border-radius: 10px;
+}
 
 .admin-panel-reis-item{
     width: 100%;
