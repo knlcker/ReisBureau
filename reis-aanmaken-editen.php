@@ -54,21 +54,21 @@
                             }
                         ?>
                     </select>
-                    <label for="Locatie-stad">Locatie Stad</label><br>
+                    <label for="Locatie-stad" class="label">Locatie Stad</label><br>
                     <input class="reis-Invulvelden" type="text" name="Locatie-stad" placeholder="Locatie Stad..." required>
-                    <label for="Beschrijving">Overnachting Beschrijving</label><br>
+                    <label for="Beschrijving" class="label">Overnachting Beschrijving</label><br>
                     <input class="reis-Invulvelden" type="text" name="Beschrijving" placeholder="Overnachting Beschrijving..." required>
-                    <label for="Prijs">Prijs Per Nacht</label><br>
+                    <label for="Prijs" class="label">Prijs Per Nacht</label><br>
                     <input class="reis-Invulvelden" class="prijs"  type="number" name="Prijs" placeholder="Prijs Per Nacht..." required>
-                    <label for="Start-datum">Start</label><br>
+                    <label for="Start-datum" class="label">Start</label><br>
                     <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Start-datum" min="<?php echo $date; ?>" value="<?php echo $date; ?>" required>
-                    <label for="Eind-datum">Einde</label><br>
+                    <label for="Eind-datum" class="label">Einde</label><br>
                     <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Eind-datum" min="<?php echo $date; ?>" required>
-                    <label for="beschrijving-reis">Beschrijving reis</label><br>
+                    <label for="beschrijving-reis" class="label">Beschrijving reis</label><br>
                     <textarea class="reis-Invulvelden Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis..." required></textarea>
-                    <label for="hoofd-afbeelding">Hoofd Afbeelding</label><br>
+                    <label for="hoofd-afbeelding" class="label">Hoofd Afbeelding</label><br>
                     <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg" required>
-                    <label for="hoofd-afbeelding">Overige Afbeelding</label><br>
+                    <label for="hoofd-afbeelding" class="label">Overige Afbeelding</label><br>
                     <input class="files" type="file" name="overige-afbeelding" placeholder="Overige Afbeelding..." accept="image/png, image/jpeg" multiple>
                     <input class="reis-aanmaken-submit" type="submit">
                 </form>

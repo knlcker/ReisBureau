@@ -963,7 +963,7 @@ a{
     justify-content: flex-start;
     flex-direction: column;
 }
-label{
+.label{
     padding-top: 20px;
 }
 .reis-Invulvelden{
@@ -1024,6 +1024,9 @@ label{
     height: auto;
     min-height: 700px;
 
+    display: flex;
+    flex-direction: column;
+
 }
 .afbeelding-container{
     width: 100%;
@@ -1055,6 +1058,13 @@ label{
     height: 400px;
     border-radius: 25px;
     background-color: white;
+
+    display: flex;
+    flex-direction: row;
+}
+.informatie-text{
+    width: 50%;
+    height: auto;
 }
 #reis-informatie-extra-afbeelding-links-boven{
     padding-left: 10px;
@@ -1078,6 +1088,22 @@ label{
 }
 .reis-voorzieningen{
     width: 100%;
+    height: auto;
+}
+.reis-boeken-button{
+    width: 	50%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.invulvelden-reis-boeken{
+    
+}
+.form-reis-boeken{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 

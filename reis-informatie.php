@@ -58,6 +58,7 @@
                             </div>
                         </div>
                         <div class="informatie-text-container">
+                            <div class="informatie-text">
                             <div class="reis-informatie-locatie">' . $item['reis_location_country'] . " , " . $item['reis_location_city'] . '</div>
                             <div class="reis-informatie-title">' . $item['reis_title'] . '</div>
                             <div class="reis-reviews">
@@ -75,6 +76,22 @@
                                 <div>Ontbijt inbegrepen</div>
                             </div>
                         </div>
+                        <div class="reis-boeken-button">
+                                <form action="reis-informatie.php" method="GET" class="form-reis-boeken">
+                                    <input type="hidden" name="reis_id_info" value="' . $item['reis_id'] . '"></input>
+                                    <div class="invulvelden-reis-boeken">
+                                        <label for="aantal-persoonen">Aantal persoonen: </label><br>
+                                        <input type="number" name="aantal-persoonen" value="' . $item[''] .'"</input>
+                                        <label for="datum-aankomst">Aankomst datum: </label><br>
+                                        <input type="date" name="datum-aankomst" value="' . $item[''] .'"</input>
+                                        <label for="datum-vertrek">Vertrek datum: </label><br>
+                                        <input type="date" name="datum-vertrek" value="' . $item[''] .'"</input>
+                                    </div>
+                                    <button type="submit" class="reis-informatie-button">boeken</button>
+                                </form>
+                            </div>
+                        </div>
+                        
                     </div>
                             ';
                 }
