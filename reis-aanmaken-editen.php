@@ -60,6 +60,8 @@
                     <input class="reis-Invulvelden" type="text" name="Beschrijving" placeholder="Overnachting Beschrijving..." required>
                     <label for="Prijs" class="label">Prijs Per Nacht</label><br>
                     <input class="reis-Invulvelden" class="prijs"  type="number" name="Prijs" placeholder="Prijs Per Nacht..." required>
+                    <label for="Max-aantal-personen" class="label">Max aantal personen</label><br>
+                    <input class="reis-Invulvelden" class="max-aantal-personen"  type="number" name="Max-aantal-personen" placeholder="Max aantal Personen..." required>
                     <label for="Start-datum" class="label">Start</label><br>
                     <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Start-datum" min="<?php echo $date; ?>" value="<?php echo $date; ?>" required>
                     <label for="Eind-datum" class="label">Einde</label><br>
