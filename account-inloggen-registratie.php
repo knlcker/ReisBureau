@@ -20,7 +20,9 @@ if (isset($_POST['email-login']) && isset($_POST['password-login'])) {
 
     $account = $checkIfUserExists->fetch();
         if ($account == false) {
-            header("Location: Inloggen.php");
+            $_SESSION['error_message_login'] = "Email of wachtwoord is onjuist!";
+
+            header("location: Inloggen.php");
         } else {
 
             $_SESSION['user_id'] = $account['user_id'];
@@ -70,6 +72,7 @@ if (isset($_POST['registreren-voornaam']) && isset($_POST['registreren-achternaa
 
             header("Location: index.php");
         } else {
+            $_SESSION['error_message_register'] = "Email is al in gebruik!";
             header("Location: Inloggen.php");
         }
 };
