@@ -226,9 +226,12 @@ a{
     justify-content: flex-end;
     align-items: center;
     color: #3F83D3;
-    text-decoration: underline #3F83D3;
     font-size: 10pt;
     font-weight: 500;
+}
+
+.underline-wachtwoord-vergeten{
+    text-decoration: underline #3F83D3;
 }
 
 .inloggen-submit{
@@ -242,6 +245,17 @@ a{
     color: #FFFFFF;
     border-radius: 25px;
     cursor: pointer;
+}
+
+.inloggen-error-message{
+    width: 100%;
+    height: auto;
+    color: #de2323;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .naar-registreren-container{

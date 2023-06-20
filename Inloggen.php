@@ -46,7 +46,19 @@
                                 <input class="inloggen-input" type="text" name="email-login" placeholder="E-Mail..." maxlength="50" required></input>
                                 <input class="inloggen-input" type="password" name="password-login" placeholder="Wachtwoord..." maxlength="20" required></input>
                             </div>
-                            <div class="inloggen-wachtwoord-vergeten">Wachtwoord vergeten?</div>
+                            <div class="inloggen-wachtwoord-vergeten">
+                                <?php 
+                                    if(isset($_SESSION['error_message_login'])){
+                                        echo '<div class="inloggen-error-message">' . $_SESSION['error_message_login'] . '</div>';
+                                        unset($_SESSION['error_message_login']);
+                                    } else if(isset($_SESSION['error_message_register'])){
+                                        echo '<div class="inloggen-error-message">' . $_SESSION['error_message_register'] . '</div>';
+                                        unset($_SESSION['error_message_register']);
+                                    }
+                                ?>    
+                                <div class="underline-wachtwoord-vergeten">Wachtwoord vergeten?</div>
+
+                            </div>
                             <button class="inloggen-submit" type="submit">Log In</button>
                         </form>
                         <div class="naar-registreren-container">
@@ -55,8 +67,7 @@
                                 <p>Maak er dan</p> <div class="inloggen-registratie-switch" onclick="switchNaarRegistreren()">hier</div> <p>een aan!</p>
                             </div>
                             
-                        </div>
-                        
+                        </div>                        
                     </div>
                     <div id="registreren" class="inloggen-container">
                         <img class="bookly-image-inloggen" src="Images/Bookly.png" alt="Bookly-image">
