@@ -45,7 +45,7 @@
                 <input class="reis-search" name="search_date_end" type="date" min="<?php echo $date;?>" placeholder="Vertrek"></input>
             </div>
             <div class="submit-zoeken-reis">
-                <input type="submit" name="Zoeken" value="Zoeken">
+                <input class="zoeken-button" type="submit" name="Zoeken" value="Zoeken">
                 </input>
             </div>
         </form>

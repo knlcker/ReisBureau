@@ -21,8 +21,8 @@
 
                 </div>
                 <div class="contact-page-right-container">
-                    <h1>Wachtwoord vergeten?</h1> 
-                    <h2>Vertel ons je EMAIL en we lossen het op!</h2> 
+                    <h1 class="wachtwoord-vergeten-bericht-text">Wachtwoord vergeten?</h1> 
+                    <h2 class="wachtwoord-vergeten-bericht-text">Vertel ons je EMAIL en we lossen het op!</h2> 
                     <form class="contact-message" action="wachtwoordvergeten.php" method="POST">
                         <textarea class="contact-page-bericht" name="Bericht" cols="30" rows="10"></textarea>
                         <input type="submit">
