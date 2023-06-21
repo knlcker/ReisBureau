@@ -237,12 +237,7 @@ session_start();
                                                     </div>
                                                 </div>
                                                 <div class="admin-panel-reis-item-reis-container-edit-delete">
-                                                    <form action="reis-bewerken.php" method="POST">
-                                                        <input type="hidden" name="reis_id_to_edit" value="' . $item['reis_id'] . '" ></input>
-                                                        <button type="submit" class="delete-button">
-                                                            <i class="fa-solid fa-pen-to-square" style="color: #000000;"></i>
-                                                        </button>
-                                                    </form>
+                                                    <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i></div>
                                                     <form action="reis-delete.php" method="POST">
                                                         <input type="hidden" name="reis_id_to_delete" value="' . $item['reis_id'] . '" ></input>
                                                         <button type="submit" class="delete-button">
@@ -258,7 +253,65 @@ session_start();
 
                             </div>
 
-                            <div id="account-content-admin-panel-content-container-geboekte-reizen"></div>
+                            <div id="account-content-admin-panel-content-container-geboekte-reizen">
+                            <?php
+                                $geboekteReizen = $connectie->prepare("SELECT boeking_id, boeking_reis_start, boeking_reis_end, boeking_aantal_personen, boeking_price, reis_review_beoordeling, reis_location_country, reis_location_city, reis_title, reis_description, user_firstname, user_lastname 
+                                    FROM boekingen 
+                                    INNER JOIN users 
+                                    ON boekingen.user_id = users.user_id 
+                                    INNER JOIN reizen 
+                                    ON boekingen.reis_id = reizen.reis_id
+                                    ORDER BY boeking_reis_start ASC");
+                                $geboekteReizen->execute([]);
+
+                                if ($geboekteReizen->rowCount() == 0) {
+                                    echo "Er zijn geen reizen geboekt!";
+                                } else {
+                                    while ($geboekteReisItem = $geboekteReizen->fetch()) {
+                                        echo '
+                                            <div class="admin-panel-geboekte-reis-item">
+                                                <div class="admin-panel-geboekte-reis-info-locatie-naam">
+                                                    <div class="admin-panel-geboekte-reis-info-locatie">
+                                                        <div class="admin-panel-geboekte-reis-info-locatie-plaats">' . $geboekteReisItem['user_firstname'] . " " . $geboekteReisItem['user_lastname'] . '</div>
+                                                    </div>
+                                                    <div class="admin-panel-geboekte-reis-info-locatie">
+                                                        <div class="admin-panel-geboekte-reis-info-locatie-plaats">' . $geboekteReisItem['reis_location_country'] . ", " . $geboekteReisItem['reis_location_city'] . '</div>
+                                                        <div class="admin-panel-geboekte-reis-info-locatie-overnachting">' . $geboekteReisItem['reis_title'] . '</div>
+                                                    </div>
+                                                </div>
+                                                <div class="geboekte-reis-detailts-and-cancel">
+                                                    <div class="admin-panel-geboekte-reis-info-datum-container">
+                                                        <div class="admin-panel-geboekte-reis-info-datum">
+                                                            <div>Aankomst:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">' . $geboekteReisItem['boeking_reis_start'] . '</div>
+                                                        </div>
+                                                        <div class="admin-panel-geboekte-reis-info-datum">
+                                                            <div>Vertrek:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">' . $geboekteReisItem['boeking_reis_end'] . '</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="admin-panel-geboekte-reis-info-prijs">
+                                                        <div>
+                                                            <div>Aantal Personen:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">' . $geboekteReisItem['boeking_aantal_personen'] . '</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Prijs:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">€' . $geboekteReisItem['boeking_price'] . '</div>
+                                                        </div>
+                                                    </div>                                                        
+                                                    <div class="admin-panel-geboekte-reis-annuleren-container">
+                                                        <form action="reis-annuleren.php" method="POST">
+                                                            <input type="hidden" name="geboekte_reis_to_delete" value="' . $geboekteReisItem['boeking_id'] . '"></input>
+                                                            <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>';
+                                    }
+                                }
+                                ?>
+                            </div>
                             <div id="account-content-admin-panel-content-container-locaties-beheren">
                                 <div class="locaties-beheren-container">
                                     <div class="locaties-beheren-buttons">
@@ -331,24 +384,7 @@ session_start();
                                 </div>
 
                                 <div id="account-content-reviews">
-                                    <?php
-                                        $Reviews = $connectie->prepare("SELECT * FROM boekingen");
-                                        $Reviews->execute([]);
 
-                                
-                                
-                                            while ($item = $Reviews->fetch()) {
-                                                echo '
-                                                    <div class="reviews-container-admin-panel">
-                                                        <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.</div>
-                                                        <div class="wachtwoord-vergeten-berichten-bericht">Rating: ' . $item['reis_review_beoordeling'] . '</div>
-                                                        <div class="wachtwoord-vergeten-berichten-bericht">Review: ' . $item['reis_review_bericht'] . '</div>
-                                                    </div>
-                                                ';
-                                            }
-                                
-                                    ?> 
-                                
                                 </div>
                             </div>
                     </div>
@@ -419,6 +455,21 @@ session_start();
             document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "flex";
         }
 
+        function berichtenReviews() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
+            document.getElementById("account-content-berichten").style.display = "none";
+        }
+        function berichtenWwVergeten() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
+            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("").style.display = "none";
+        }
+        function berichten() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
+            document.getElementById("account-content-berichten").style.display = "flex";
+            document.getElementById("").style.display = "none";
+        }
+
         function activeOwnerPanel() {
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
@@ -446,27 +497,6 @@ session_start();
             document.getElementById("account-content-berichten-container").style.display = "flex";
             <?php $accountCurrentOption = "Berichten"; ?>
         };
-
-        function berichtenWwVergeten() {
-            document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
-            document.getElementById("account-content-berichten").style.display = "none";
-            document.getElementById("account-content-reviews").style.display = "none";
-        }
-
-        function berichten() {
-            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
-            document.getElementById("account-content-berichten").style.display = "flex";
-            document.getElementById("account-content-reviews").style.display = "none";
-        }
-        
-        function berichtenReviews() {
-            document.getElementById("account-content-reviews").style.display = "flex";
-            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
-            document.getElementById("account-content-berichten").style.display = "none";
-            
-        }
-        
-        
     </script>
 </body>
 
