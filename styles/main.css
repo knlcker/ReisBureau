@@ -743,7 +743,7 @@ a{
 }
 
 #account-content-admin-panel-content-container-locaties-beheren{
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 2em;
 }
@@ -1420,7 +1420,47 @@ a{
     border: solid 1px black;
     display: flex;
     flex-direction: column;
+    gap: 3em;
 }
+
+.recensie-terug-container a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.recensie-form-container{
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.recensie-form{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.recensie-form-beoordeling{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recensie-form-beoordeling select{
+    width: 50px;
+}
+
+.recensie-bericht{
+    width: 80%;
+    height: 20%;
+    max-width: 500px;
+    max-height: 200px;
+    min-width: 400px;
+    min-height: 100px;
+}
+
 .zoeken-button{
     width: 150px;
     height: 25px;

@@ -70,7 +70,7 @@
                     <label for="beschrijving-reis" class="label">Beschrijving reis</label><br>
                     <textarea class="reis-Invulvelden Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis..." required></textarea>
                     <label for="hoofd-afbeelding" class="label">Hoofd Afbeelding</label><br>
-                    <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg" required>
+                    <input class="files" type="file" name="hoofd-afbeelding" placeholder="Hoofd Afbeelding..." accept="image/png, image/jpeg">
                     <label for="hoofd-afbeelding" class="label">Overige Afbeelding</label><br>
                     <input class="files" type="file" name="overige-afbeelding" placeholder="Overige Afbeelding..." accept="image/png, image/jpeg" multiple>
                     <input class="reis-aanmaken-submit" type="submit">

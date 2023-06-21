@@ -168,12 +168,12 @@ session_start();
                                                         if($date < $mijnReisItem['boeking_reis_end']){
                                                             echo'
                                                             <form action="recensie.php" method="POST">
-                                                                <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
+                                                                <input type="hidden" name="geboekte_reis_to_review" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                                 <button type="hidden" class="admin-panel-geboekte-reis-review-button">Beoordelen</button>
                                                             </form>
                                                             
                                                             ';
-                                                        }'
+                                                        } echo '
                                                     </div>
                                                 </div>
                                             </div>';
