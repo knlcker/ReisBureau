@@ -3,7 +3,14 @@
             <div class="footer-top">
                 <div class="footer-text-container">
                     <h1 class="footer-category-text-header">Klantenservice</h1>
-                    <a href="contact.php" class="footer-category-text">Contact Us</a>
+                    <?php
+                        if(isset($_SESSION['user_id'])){
+                            echo '<a href="contact.php" class="footer-category-text">Contact Us</a>';
+                        } else{
+                            echo '<a href="Inloggen.php" class="footer-category-text">Contact Us</a>';
+                        }
+                    
+                    ?>
                     <div class="footer-category-text">contact-bookly@gmail.com</div>
                     <a href="over-ons.html" class="footer-category-text">Over ons</a>
             	</div>

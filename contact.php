@@ -15,13 +15,17 @@
         <div class="contact-container">
             <div class="contact-page">
                 <div class="contact-page-left-container">
-                    <img src="Images/weWantToHearFromYou.png" alt="">
+                    <img class="wewanttohearfromyouimage" src="Images/weWantToHearFromYou.png" alt="we want to hear from you.">
                 </div>
                 <div class="contact-page-middle-container">
 
                 </div>
                 <div class="contact-page-right-container">
-
+                    <h1>Contact us</h1>  
+                    <form class="contact-message" action="bericht.php" method="POST">
+                        <textarea class="contact-page-bericht" name="Bericht" cols="30" rows="10"></textarea>
+                        <input type="submit">
+                    </form>
                 </div>
             </div>
         </div>
