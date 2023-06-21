@@ -118,19 +118,53 @@ session_start();
                         <div class="account-content-mijn-boekingen-content-container">
                             <div id="account-content-mijn-boekingen-content-container-alle-boekingen">
                                 <?php
-                                    $mijnGeboekteReizen = $connectie->prepare("SELECT * FROM boekingen WHERE user_id = ? ORDER BY boeking_reis_start ASC");
-                                    $mijnGeboekteReizen->execute([$_SESSION['user_id']]);
+                                $mijnGeboekteReizen = $connectie->prepare("SELECT boeking_id, boeking_reis_start, boeking_reis_end, boeking_aantal_personen, boeking_price, reis_location_country, reis_location_city, reis_title, reis_description, user_firstname, user_lastname 
+                                    FROM boekingen 
+                                    INNER JOIN users 
+                                    ON boekingen.user_id = users.user_id 
+                                    INNER JOIN reizen 
+                                    ON boekingen.reis_id = reizen.reis_id
+                                    WHERE boekingen.user_id = ? ORDER BY boeking_reis_start ASC");
+                                $mijnGeboekteReizen->execute([$_SESSION['user_id']]);
 
-                                    if ($mijnGeboekteReizen->rowCount() == 0) {
-                                        echo "Je hebt geen reizen geboekt!";
-                                    } else {
-                                        while ($mijnReisItem = $mijnGeboekteReizen->fetch()) {
-                                            echo '
-                                                <div class="admin-panel-reis-item">
-                                                    
-                                                </div>';
-                                        }
+                                if ($mijnGeboekteReizen->rowCount() == 0) {
+                                    echo "Je hebt geen reizen geboekt!";
+                                } else {
+                                    while ($mijnReisItem = $mijnGeboekteReizen->fetch()) {
+                                        echo '
+                                            <div class="admin-panel-geboekte-reis-item">
+                                                <div class="admin-panel-geboekte-reis-info-locatie">
+                                                    <div class="admin-panel-geboekte-reis-info-locatie-plaats">' . $mijnReisItem['reis_location_country'] . ", " . $mijnReisItem['reis_location_city'] . '</div>
+                                                    <div class="admin-panel-geboekte-reis-info-locatie-overnachting">' . $mijnReisItem['reis_title'] . '</div>
+                                                </div>
+                                                <div class="geboekte-reis-detailts-and-cancel">
+                                                    <div class="admin-panel-geboekte-reis-info-datum-container">
+                                                        <div class="admin-panel-geboekte-reis-info-datum">
+                                                            <div>Aankomst:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">' . $mijnReisItem['boeking_reis_start'] . '</div>
+                                                        </div>
+                                                        <div class="admin-panel-geboekte-reis-info-datum">
+                                                            <div>Vertrek:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">' . $mijnReisItem['boeking_reis_end'] . '</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="admin-panel-geboekte-reis-info-prijs">
+                                                        <div>
+                                                            <div>Aantal Personen:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">' . $mijnReisItem['boeking_aantal_personen'] . '</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Prijs:</div>
+                                                            <div class="admin-panel-geboekte-reis-info">€' . $mijnReisItem['boeking_price'] . '</div>
+                                                        </div>
+                                                    </div>                                                        
+                                                    <div class="admin-panel-geboekte-reis-annuleren-container">
+                                                        <div class="admin-panel-geboekte-reis-annuleren-button">Annuleren</div>                                                    
+                                                    </div>
+                                                </div>
+                                            </div>';
                                     }
+                                }
                                 ?>
                             </div>
                         </div>
