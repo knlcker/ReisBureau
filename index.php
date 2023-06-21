@@ -39,9 +39,15 @@
     <main class="main-index">
         <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
         <form class="reis-search-container" action="homepage-reiszoeken.php" method="GET">
-            <input class="reis-search" name="search_location" type="search" placeholder="Locatie..." ></input>
-            <input class="reis-search" name="search_date_start" type="date" min="<?php echo $date;?>" placeholder="Aankomst"></input>
-            <input class="reis-search" name="search_date_end" type="date" min="<?php echo $date;?>" placeholder="Vertrek"></input>
+            <div class="reis-search-container2">
+                <input class="reis-search" name="search_location" type="search" placeholder="Locatie..." ></input>
+                <input class="reis-search" name="search_date_start" type="date" min="<?php echo $date;?>" placeholder="Aankomst"></input>
+                <input class="reis-search" name="search_date_end" type="date" min="<?php echo $date;?>" placeholder="Vertrek"></input>
+            </div>
+            <div class="submit-zoeken-reis">
+                <input type="submit" name="Zoeken" value="Zoeken">
+                </input>
+            </div>
         </form>
         <div id="reis-category">
         <div class="reis-category-container">

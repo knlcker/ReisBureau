@@ -47,8 +47,9 @@ function isPresent($waarde)
     <main class="main-index">
         <img class="index-image" src="Images/index3.png" alt="Twee stoelen op het strand">
         <div class="reis-search-container">
-            <form class="reis-search-container" action="homepage-reiszoeken.php" method="GET">
-                <input class="reis-search" name="search_location" type="search" placeholder="Locatie..." <?php if (isset($_GET['search_location'])) {
+        <form class="reis-search-container" action="homepage-reiszoeken.php" method="GET">
+            <div class="reis-search-container2">
+            <input class="reis-search" name="search_location" type="search" placeholder="Locatie..." <?php if (isset($_GET['search_location'])) {
                                                                                                                 echo 'value="' . $_GET['search_location'] . '"';
                                                                                                             } ?>></input>
                 <input class="reis-search" name="search_date_start" type="date" min="<?php echo $date; ?>" placeholder="Aankomst" <?php if (isset($_GET['search_date_start'])) {
@@ -57,7 +58,12 @@ function isPresent($waarde)
                 <input class="reis-search" name="search_date_end" type="date" min="<?php echo $date; ?>" placeholder="Vertrek" <?php if (isset($_GET['search_date_end'])) {
                                                                                                                                     echo 'value="' . $_GET['search_date_end'] . '"';
                                                                                                                                 } ?>></input>
-            </form>
+            </div>
+            <div class="submit-zoeken-reis">
+                <input type="submit" name="Zoeken" value="Zoeken">
+                </input>
+            </div>
+        </form>
         </div>
 
         <div class="reis-locaties-container">
