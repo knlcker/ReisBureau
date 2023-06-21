@@ -278,7 +278,7 @@ session_start();
                     </div>
                     <div id="account-content-berichten">
                     <?php
-                                $Bericht = $connectie->prepare("SELECT * FROM wachtwoord_vergeten WHERE bericht_id = ?");
+                                $Bericht = $connectie->prepare("SELECT * FROM wachtwoord_vergeten");
                                 $Bericht->execute([]);
 
                                 
@@ -369,7 +369,7 @@ session_start();
             document.getElementById("account-content-admin-panel").style.display = "none";
             document.getElementById("account-menu-owner-panel").style.color = "#4987FF";
             document.getElementById("account-content-owner-panel").style.display = "flex";
-            document.getElementById("account-menu-berichten").style.color = "#4987FF";
+            document.getElementById("account-menu-berichten").style.color = "#6F6F6F";
             document.getElementById("account-content-berichten").style.display = "none";
             <?php $accountCurrentOption = "Owner Panel"; ?>
         };
@@ -381,7 +381,7 @@ session_start();
             document.getElementById("account-content-mijn-boekingen").style.display = "none";
             document.getElementById("account-menu-admin-panel").style.color = "#6F6F6F";
             document.getElementById("account-content-admin-panel").style.display = "none";
-            document.getElementById("account-menu-owner-panel").style.color = "#4987FF";
+            document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
             document.getElementById("account-content-owner-panel").style.display = "none";
             document.getElementById("account-menu-berichten").style.color = "#4987FF";
             document.getElementById("account-content-berichten").style.display = "flex";
