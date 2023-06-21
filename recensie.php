@@ -25,6 +25,8 @@
         }
         $date = date('Y-m-d');
         $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
+        $boeking_recensie_ID=$_POST['geboekte_reis_to_review'];
+
     ?>
 </head>
 <body>
@@ -38,7 +40,30 @@
             <div class="recensie-terug-container">
                 <a href="account.php"><i class="fa-regular fa-circle-left" style="color: #000000;"></i>Terug</a>
             </div>
-            <div class="recensie-form-container"></div>
+            <div class="recensie-form-container">
+                <form class="recensie-form" action="recensie-verwerken.php" method="POST">
+                    <div class="recensie-form-beoordeling">
+                        <div>Welk cijfer zou U uw reis geven?</div>
+                        <select type="select" value="10" name="reis_review_beoordeling" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="recensie-form-bericht">
+                        <textarea class="recensie-bericht" type="text" name="recensie_bericht" placeholder="Heeft u opmerkingen over uw reis?..."></textarea>
+                    </div>
+                    <input type="hidden" name="add_geboekte_reis_to_review" value="<?php echo $boeking_recensie_ID ?>"></input>
+                    <input class="zoeken-button" type="submit" name="Verzenden" value="Verzenden">
+                </form>
+            </div>
         </div>  
     </main>
 </body>     

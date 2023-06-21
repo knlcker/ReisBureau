@@ -123,7 +123,7 @@ session_start();
                         <div class="account-content-mijn-boekingen-content-container">
                             <div id="account-content-mijn-boekingen-content-container-alle-boekingen">
                                 <?php
-                                $mijnGeboekteReizen = $connectie->prepare("SELECT boeking_id, boeking_reis_start, boeking_reis_end, boeking_aantal_personen, boeking_price, reis_location_country, reis_location_city, reis_title, reis_description, user_firstname, user_lastname 
+                                $mijnGeboekteReizen = $connectie->prepare("SELECT boeking_id, boeking_reis_start, boeking_reis_end, boeking_aantal_personen, boeking_price, reis_review_beoordeling, reis_location_country, reis_location_city, reis_title, reis_description, user_firstname, user_lastname 
                                     FROM boekingen 
                                     INNER JOIN users 
                                     ON boekingen.user_id = users.user_id 
@@ -168,7 +168,7 @@ session_start();
                                                             <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                             <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
                                                         </form>';
-                                                        if($date < $mijnReisItem['boeking_reis_end']){
+                                                        if($date < $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null){
                                                             echo'
                                                             <form action="recensie.php" method="POST">
                                                                 <input type="hidden" name="geboekte_reis_to_review" value="' . $mijnReisItem['boeking_id'] . '"></input>

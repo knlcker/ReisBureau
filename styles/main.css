@@ -1438,13 +1438,14 @@ a{
     min-height: 200px;
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
 
 .recensie-form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 3em;
 }
 
