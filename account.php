@@ -358,8 +358,8 @@ session_start();
                                 
                                         while ($item = $BerichtWV->fetch()) {
                                             echo '
-                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.</div>
-                                                <div class="wachtwoord-vergeten-berichten-bericht">' . $item['bericht'] . '</div>
+                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '.</div>
+                                                
                                             ';
                                         }
                                 
@@ -375,8 +375,8 @@ session_start();
                                 
                                         while ($item = $Bericht->fetch()) {
                                             echo '
-                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.</div>
-                                                <div class="wachtwoord-vergeten-berichten-bericht">' . $item['bericht'] . '</div>
+                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '</div>
+
                                             ';
                                         }
                                 
@@ -385,6 +385,19 @@ session_start();
 
                                 <div id="account-content-reviews">
 
+
+                                
+                                
+                                            while ($item = $Reviews->fetch()) {
+                                                echo '
+                                                    <div class="reviews-container-admin-panel">
+                                                        <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.' . $item['reis_review_beoordeling'] . '.' . $item['reis_review_bericht'] . '</div>
+                                                    </div>
+                                                ';
+                                            }
+                                
+                                    ?> 
+                                
                                 </div>
                             </div>
                     </div>

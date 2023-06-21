@@ -934,10 +934,12 @@ a{
 #account-content-berichten-WW-vergeten{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 #account-content-berichten{
     display: none;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .wachtwoord-vergeten-berichten-bericht{
     width: auto;
@@ -947,12 +949,13 @@ a{
     flex-direction: row;
 }
 .wachtwoord-vergeten-berichten-id{
-    width: 5%;
+    width: auto;
     padding-right: 10px;
 }
 #account-content-reviews{
     display: none;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 /* footer */
