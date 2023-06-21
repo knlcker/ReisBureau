@@ -19,6 +19,7 @@ a{
 
 /* Index page */
 
+
 .header-main{
     width: 100%;
     height: 100px;
@@ -555,7 +556,8 @@ a{
     gap: 3em;
 }
 
-.account-content-mijn-boekingen-content-container-alle-boekingen{
+#account-content-mijn-boekingen-content-container-alle-boekingen{
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 2em;
@@ -616,6 +618,9 @@ a{
 .admin-panel-geboekte-reis-annuleren-container{
     height: 100%;
     width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .admin-panel-geboekte-reis-annuleren-button{
@@ -624,11 +629,34 @@ a{
     background-color: rgb(231, 104, 104);
     color: #ffffff;
     border-radius: 20px;
-    font-size: 10pt;
+    font-size: 9pt;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.admin-panel-geboekte-reis-review-button{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(108, 177, 65);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 9pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 /* Admin Panel */
@@ -847,6 +875,16 @@ a{
 }
 
 .admin-panel-reis-item-icon{
+    font-size: 24pt;
+}
+
+.delete-button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
     font-size: 24pt;
 }
 
