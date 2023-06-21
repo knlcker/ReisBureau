@@ -164,11 +164,16 @@ session_start();
                                                         <form action="reis-annuleren.php" method="POST">
                                                             <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                             <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
-                                                        </form>
-                                                        <form action="" method="POST">
-                                                            <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
-                                                            <button type="hidden" class="admin-panel-geboekte-reis-review-button">Beoordelen</button>
-                                                        </form>
+                                                        </form>';
+                                                        if($date < $mijnReisItem['boeking_reis_end']){
+                                                            echo'
+                                                            <form action="recensie.php" method="POST">
+                                                                <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
+                                                                <button type="hidden" class="admin-panel-geboekte-reis-review-button">Beoordelen</button>
+                                                            </form>
+                                                            
+                                                            ';
+                                                        }'
                                                     </div>
                                                 </div>
                                             </div>';
