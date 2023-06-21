@@ -276,21 +276,59 @@ session_start();
                     <div id="account-content-owner-panel">
                             
                     </div>
-                    <div id="account-content-berichten">
-                    <?php
-                                $Bericht = $connectie->prepare("SELECT * FROM wachtwoord_vergeten");
-                                $Bericht->execute([]);
+                    
+                    <div id="account-content-berichten-container">
+                        <div class="account-content-berichten-panel-options">
+                            <div class="account-content-admin-panel-options-button" id="account-content-WW-panel-options-button-vergeten" onclick="berichtenWwVergeten()">
+                                WW vergeten
+                            </div>
+                            <div class="account-content-admin-panel-options-button" id="account-content-berichten-panel-options-button-normale" onclick="berichten()">
+                                 Berichten
+                            </div>
+                            <div class="account-content-admin-panel-options-button" id="account-content-berichten-panel-options-button-berichten" onclick="berichtenReviews()">
+                                Reviews
+                            </div>
+                        </div>
+                            
+                    
+                            <div id="account-content-berichten-WW-vergeten">
+                                <?php
+                                    $BerichtWV = $connectie->prepare("SELECT * FROM wachtwoord_vergeten");
+                                    $BerichtWV->execute([]);
 
                                 
                                 
-                                    while ($item = $Bericht->fetch()) {
-                                        echo '
+                                        while ($item = $BerichtWV->fetch()) {
+                                            echo '
+                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.</div>
+                                                <div class="wachtwoord-vergeten-berichten-bericht">' . $item['bericht'] . '</div>
+                                            ';
+                                        }
                                 
-                                            <div>' . $item['bericht'] . '</div>
-                                        ';
-                                    }
+                                ?>
+                            </div>
+
+                            <div id="account-content-berichten">
+                                <?php
+                                    $Bericht = $connectie->prepare("SELECT * FROM berichten");
+                                    $Bericht->execute([]);
+
                                 
-                            ?>
+                                
+                                        while ($item = $Bericht->fetch()) {
+                                            echo '
+                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.</div>
+                                                <div class="wachtwoord-vergeten-berichten-bericht">' . $item['bericht'] . '</div>
+                                            ';
+                                        }
+                                
+                                ?>
+                                </div>
+
+                                <div id="account-content-reviews">
+
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -309,7 +347,7 @@ session_start();
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
             document.getElementById("account-content-owner-panel").style.display = "none";
             document.getElementById("account-menu-berichten").style.color = "#6F6F6F";
-            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("account-content-berichten-container").style.display = "none";
             <?php $accountCurrentOption = "Account Informatie"; ?>
         };
 
@@ -323,7 +361,7 @@ session_start();
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
             document.getElementById("account-content-owner-panel").style.display = "none";
             document.getElementById("account-menu-berichten").style.color = "#6F6F6F";
-            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("account-content-berichten-container").style.display = "none";
             <?php $accountCurrentOption = "Mijn Boekingen"; ?>
         };
 
@@ -337,7 +375,7 @@ session_start();
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
             document.getElementById("account-content-owner-panel").style.display = "none";
             document.getElementById("account-menu-berichten").style.color = "#6F6F6F";
-            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("account-content-berichten-container").style.display = "none";
             <?php $accountCurrentOption = "Admin Panel"; ?>
         };
 
@@ -359,6 +397,20 @@ session_start();
             document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "flex";
         }
 
+        function berichtenReviews() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
+            document.getElementById("account-content-berichten").style.display = "none";
+        }
+        function berichtenWwVergeten() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
+            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("").style.display = "none";
+        }
+        function berichten() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
+            document.getElementById("account-content-berichten").style.display = "flex";
+            document.getElementById("").style.display = "none";
+        }
 
         function activeOwnerPanel() {
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
@@ -370,7 +422,7 @@ session_start();
             document.getElementById("account-menu-owner-panel").style.color = "#4987FF";
             document.getElementById("account-content-owner-panel").style.display = "flex";
             document.getElementById("account-menu-berichten").style.color = "#6F6F6F";
-            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("account-content-berichten-container").style.display = "none";
             <?php $accountCurrentOption = "Owner Panel"; ?>
         };
 
@@ -384,7 +436,7 @@ session_start();
             document.getElementById("account-menu-owner-panel").style.color = "#6F6F6F";
             document.getElementById("account-content-owner-panel").style.display = "none";
             document.getElementById("account-menu-berichten").style.color = "#4987FF";
-            document.getElementById("account-content-berichten").style.display = "flex";
+            document.getElementById("account-content-berichten-container").style.display = "flex";
             <?php $accountCurrentOption = "Berichten"; ?>
         };
     </script>
