@@ -421,6 +421,11 @@ a{
     font-weight: 600;
     transition: 0.75s;
 }
+#account-menu-berichten{
+    color: #6F6F6F;
+    font-weight: 600;
+    transition: 0.75s;
+}
 
 .account-contents{
     width: 75%;
