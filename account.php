@@ -326,7 +326,24 @@ session_start();
                                 </div>
 
                                 <div id="account-content-reviews">
+                                    <?php
+                                        $Reviews = $connectie->prepare("SELECT * FROM boekingen");
+                                        $Reviews->execute([]);
 
+                                
+                                
+                                            while ($item = $Reviews->fetch()) {
+                                                echo '
+                                                    <div class="reviews-container-admin-panel">
+                                                        <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.</div>
+                                                        <div class="wachtwoord-vergeten-berichten-bericht">Rating: ' . $item['reis_review_beoordeling'] . '</div>
+                                                        <div class="wachtwoord-vergeten-berichten-bericht">Review: ' . $item['reis_review_bericht'] . '</div>
+                                                    </div>
+                                                ';
+                                            }
+                                
+                                    ?> 
+                                
                                 </div>
                             </div>
                     </div>
@@ -397,21 +414,6 @@ session_start();
             document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "flex";
         }
 
-        function berichtenReviews() {
-            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
-            document.getElementById("account-content-berichten").style.display = "none";
-        }
-        function berichtenWwVergeten() {
-            document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
-            document.getElementById("account-content-berichten").style.display = "none";
-            document.getElementById("").style.display = "none";
-        }
-        function berichten() {
-            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
-            document.getElementById("account-content-berichten").style.display = "flex";
-            document.getElementById("").style.display = "none";
-        }
-
         function activeOwnerPanel() {
             document.getElementById("account-menu-account-informatie").style.color = "#6F6F6F";
             document.getElementById("account-content-account-information").style.display = "none";
@@ -439,6 +441,27 @@ session_start();
             document.getElementById("account-content-berichten-container").style.display = "flex";
             <?php $accountCurrentOption = "Berichten"; ?>
         };
+
+        function berichtenWwVergeten() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
+            document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("account-content-reviews").style.display = "none";
+        }
+
+        function berichten() {
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
+            document.getElementById("account-content-berichten").style.display = "flex";
+            document.getElementById("account-content-reviews").style.display = "none";
+        }
+        
+        function berichtenReviews() {
+            document.getElementById("account-content-reviews").style.display = "flex";
+            document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
+            document.getElementById("account-content-berichten").style.display = "none";
+            
+        }
+        
+        
     </script>
 </body>
 
