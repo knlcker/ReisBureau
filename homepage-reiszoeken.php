@@ -112,7 +112,7 @@ function isPresent($waarde)
                         $resultSet->execute([$search_date_start, $search_date_end]);
                     }
                 } else {
-                    $resultSet = $connectie->prepare("SELECT * FROM reizen AND reis_status = 'OPEN'");
+                    $resultSet = $connectie->prepare("SELECT * FROM reizen WHERE reis_status = 'OPEN'");
                     $resultSet->execute([]);
                 }
             }
