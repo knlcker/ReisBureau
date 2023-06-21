@@ -12,6 +12,7 @@ session_start();
     }
 
     $date = date('Y-m-d');
+    $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
 
     if(isset($_POST['reis_id_to_book'])) {
         $reis_ophalen = $connectie->prepare("SELECT * FROM reizen where reis_id = ?");
@@ -20,7 +21,7 @@ session_start();
         $reis = $reis_ophalen->fetch();
     }
 
-    if(isset($_POST['reis_id_to_book']) && isset($_POST['aantal-persoonen']) && isset($_POST['datum-aankomst']) && isset($_POST['datum-vertrek'])){
+    if(isset($_SESSION['user_id']) && isset($_POST['reis_id_to_book']) && isset($_POST['aantal-persoonen']) && isset($_POST['datum-aankomst']) && isset($_POST['datum-vertrek'])){
         if($_POST['datum-aankomst'] >= $_POST['datum-vertrek']){
             header("Location: homepage-reiszoeken.php");
         } else{
@@ -40,9 +41,11 @@ session_start();
 
             $statement = $connectie->prepare("INSERT INTO boekingen(reis_id, user_id, boeking_reis_start, boeking_reis_end, boeking_aantal_personen, boeking_price) VALUES(?, ?, ?, ?, ?, ?)");
             $statement->execute([$reis_id, $user_id, $reis_datum_aankomst, $reis_datum_vertrek, $reis_aantal_personen, $prijs]);
+
+            header("Location: account.php");
         }
 
+    } else{
+        header("Location: Inloggen.php");
     }
-
-    header("Location: account.php")
     ?>

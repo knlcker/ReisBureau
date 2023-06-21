@@ -12,6 +12,7 @@ session_start();
     }
 
     $date = date('Y-m-d');
+    $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
 
 if(isset($_POST['reis_id_to_delete'])){
     $reis_id_to_close = $_POST['reis_id_to_delete'];

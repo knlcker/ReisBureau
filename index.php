@@ -24,6 +24,7 @@
             echo "Verbinding werkt niet" . $e;
         }
         $date = date('Y-m-d');
+        $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
     ?>
 </head>
 <body>

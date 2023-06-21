@@ -24,6 +24,7 @@
             echo "Verbinding werkt niet" . $e;
         }
         $date = date('Y-m-d');
+        $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
     ?>
 </head>
 <body>
@@ -85,7 +86,7 @@
                                         <label for="datum-aankomst">Aankomst datum: </label><br>
                                         <input type="date" name="datum-aankomst" min="' . $date . '" max="' . $item['reis_available_end'] . '" value="' . $date .'" required</input>
                                         <label for="datum-vertrek">Vertrek datum: </label><br>
-                                        <input type="date" name="datum-vertrek" min="' . $date . '" max="' . $item['reis_available_end'] . '" required </input>
+                                        <input type="date" name="datum-vertrek" min="' . $date_plus_one_day . '" max="' . $item['reis_available_end'] . '" required </input>
                                     </div>
                                     <button type="submit" class="reis-informatie-button">boeken</button>
                                 </form>
