@@ -604,6 +604,12 @@ a{
     gap: 1em;
 }
 
+.admin-panel-geboekte-reis-info-locatie-naam{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
 .admin-panel-geboekte-reis-info-locatie{
     display: flex;
     flex-direction: column;
