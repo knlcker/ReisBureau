@@ -1176,4 +1176,31 @@ a{
 .over-ons-text-p{
     padding: 50px;
 }
+.contact-container{
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-page{
+    width: 80%;
+    height: 80%;
+    background-color: whitesmoke;
+}
+.contact-page-left-container{
+
+}
+.contact-page-middle-container{
+
+} 
+.contact-page-right-container{
+
+}
+.wewanttohearfromyouimage{
+    width: 100%;
+    height: 100%;
+}
 
