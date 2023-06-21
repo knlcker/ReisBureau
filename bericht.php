@@ -12,6 +12,7 @@ session_start();
     }
 
     $date = date('Y-m-d');
+    $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
 
 if(isset($_POST['Bericht']) && isset($_SESSION['user_id'])){
     $bericht = $_POST['Bericht'];

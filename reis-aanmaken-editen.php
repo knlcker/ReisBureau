@@ -25,6 +25,7 @@
     }
 
     $date = date('Y-m-d');
+    $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
 
     ?>
     </head>
@@ -65,7 +66,7 @@
                     <label for="Start-datum" class="label">Start</label><br>
                     <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Start-datum" min="<?php echo $date; ?>" value="<?php echo $date; ?>" required>
                     <label for="Eind-datum" class="label">Einde</label><br>
-                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Eind-datum" min="<?php echo $date; ?>" required>
+                    <input class="reis-Invulvelden" class="datum-aanmaken" type="date" name="Eind-datum" min="<?php echo $date_plus_one_day; ?>" required>
                     <label for="beschrijving-reis" class="label">Beschrijving reis</label><br>
                     <textarea class="reis-Invulvelden Beschrijving-reis" type="text" name="Beschrijving-reis" placeholder="Beschrijving Reis..." required></textarea>
                     <label for="hoofd-afbeelding" class="label">Hoofd Afbeelding</label><br>

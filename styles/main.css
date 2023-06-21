@@ -566,6 +566,7 @@ a{
 
 .admin-panel-geboekte-reis-item{
     width: 100%;
+    min-width: 365px;
     height: 175px;
     flex-shrink: 0;
     background-color: #ffffff;

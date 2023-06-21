@@ -12,6 +12,7 @@ session_start();
     }
 
     $date = date('Y-m-d');
+    $date_plus_one_day = date('Y-m-d', strtotime("+1 day"));
 
 if(isset($_POST['Locatie-land']) && isset($_POST['Locatie-stad']) && isset($_POST['Beschrijving']) && isset($_POST['Prijs']) && isset($_POST['Start-datum']) && isset($_POST['Eind-datum']) && isset($_POST['Beschrijving-reis']) && isset($_POST['hoofd-afbeelding'])){
     $new_locatie_land = $_POST['Locatie-land'];

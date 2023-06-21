@@ -24,6 +24,8 @@ session_start();
     } catch (PDOException $e) {
         echo "Verbinding werkt niet" . $e;
     }
+    $date = date('Y-m-d');
+    $date_plus_one_day = date('Y-m-d+1');
     ?>
 </head>
 
@@ -166,7 +168,7 @@ session_start();
                                                         <form action="" method="POST">
                                                             <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                             <button type="hidden" class="admin-panel-geboekte-reis-review-button">Beoordelen</button>
-                                                        </form>                                                    
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>';
