@@ -19,7 +19,6 @@ a{
 
 /* Index page */
 
-
 .header-main{
     width: 100%;
     height: 100px;
@@ -583,7 +582,6 @@ a{
     gap: 2em;
 }
 
-
 .admin-panel-geboekte-reis-item{
     width: 100%;
     min-width: 365px;
@@ -655,11 +653,11 @@ a{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 .admin-panel-geboekte-reis-review-button{
@@ -673,11 +671,11 @@ a{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 /* Admin Panel */
@@ -901,25 +899,31 @@ a{
 
 .delete-button{
     background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
     font-size: 24pt;
 }
 .account-content-berichten-panel-options{
     height: auto;
-    width: 100%;
+    width: 200vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     padding: 0 40px 0 25px;
 }
+.reviews-container-admin-panel{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
 #account-content-berichten-container{
     display: none;
     flex-wrap: wrap;
+    gap: 10px;
 }
 #account-content-berichten-WW-vergeten{
     display: flex;
@@ -930,15 +934,19 @@ a{
     flex-wrap: wrap;
 }
 .wachtwoord-vergeten-berichten-bericht{
-    width: 95%;
-    padding-right: 75px;
+    width: auto;
     height: auto;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 .wachtwoord-vergeten-berichten-id{
     width: 5%;
-    padding-right: 5px;
+    padding-right: 10px;
+}
+#account-content-reviews{
+    display: none;
+    flex-wrap: wrap;
 }
 
 /* footer */
@@ -1216,7 +1224,6 @@ a{
     transition: 0.5s;
     margin-top: 20px;
 
-
 }
 .reis-informatie-button:hover{
     background-color: rgb(80, 229, 115);
@@ -1311,7 +1318,7 @@ a{
     flex-direction: column;
 }
 .reis-boeken-button{
-    width: 	50%;
+    width:  50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -1506,7 +1513,6 @@ a{
     background-color: white;
 }
 
-
 @media only screen and (max-width: 1000px) {
     .account-menu-contents {
         padding: 120px 25px 50px 25px;
@@ -1571,4 +1577,3 @@ a{
         height: 200px;
     }                  
 }
-
