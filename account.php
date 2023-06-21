@@ -237,7 +237,12 @@ session_start();
                                                     </div>
                                                 </div>
                                                 <div class="admin-panel-reis-item-reis-container-edit-delete">
-                                                    <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i></div>
+                                                    <form action="reis-bewerken.php" method="POST">
+                                                        <input type="hidden" name="reis_id_to_edit" value="' . $item['reis_id'] . '" ></input>
+                                                        <button type="submit" class="delete-button">
+                                                            <i class="fa-solid fa-pen-to-square" style="color: #000000;"></i>
+                                                        </button>
+                                                    </form>
                                                     <form action="reis-delete.php" method="POST">
                                                         <input type="hidden" name="reis_id_to_delete" value="' . $item['reis_id'] . '" ></input>
                                                         <button type="submit" class="delete-button">
