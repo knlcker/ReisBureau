@@ -3,15 +3,15 @@
             <div class="footer-top">
                 <div class="footer-text-container">
                     <h1 class="footer-category-text-header">Klantenservice</h1>
-                    <a href="/" class="footer-category-text">Contact Us</a>
+                    <a href="contact.php" class="footer-category-text">Contact Us</a>
                     <div class="footer-category-text">contact-bookly@gmail.com</div>
                     <a href="over-ons.html" class="footer-category-text">Over ons</a>
             	</div>
                 <div class="footer-text-container">
                     <h1 class="footer-category-text-header">Reizen</h1>
-                    <a href="/" class="footer-category-text">Zomer</a>
-                    <a href="/" class="footer-category-text">Winter</a>
-                    <a href="/" class="footer-category-text">Populaire</a>
+                    <a href="reis-informatie.php" class="footer-category-text">Zomer</a>
+                    <a href="reis-informatie.php" class="footer-category-text">Winter</a>
+                    <a href="reis-informatie.php" class="footer-category-text">Populaire</a>
                 </div>
                 <div class="footer-text-container">
                 <h1 class="footer-category-text-header">Account</h1>
@@ -23,8 +23,8 @@
                         <h1 class="footer-category-text-header">Veilig betalen</h1>
                     </div>
                     <div class="footer-text-container-betalen">
-                        <h2 href="/" class="footer-category-text"><i class="fa-brands fa-paypal"></i></h2>
-                        <h2 href="/" class="footer-category-text"><i class="fa-solid fa-building-columns"></i></h2>
+                        <h2 class="footer-category-text"><i class="fa-brands fa-paypal"></i></h2>
+                        <h2 class="footer-category-text"><i class="fa-solid fa-building-columns"></i></h2>
                         <h2 class="footer-category-text"><i class="fa-brands fa-btc"></i></h2>
                     </div>
                 </div>
