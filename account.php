@@ -305,8 +305,8 @@ session_start();
                                 
                                         while ($item = $BerichtWV->fetch()) {
                                             echo '
-                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.</div>
-                                                <div class="wachtwoord-vergeten-berichten-bericht">' . $item['bericht'] . '</div>
+                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '.</div>
+                                                
                                             ';
                                         }
                                 
@@ -322,8 +322,8 @@ session_start();
                                 
                                         while ($item = $Bericht->fetch()) {
                                             echo '
-                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.</div>
-                                                <div class="wachtwoord-vergeten-berichten-bericht">' . $item['bericht'] . '</div>
+                                                <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '</div>
+
                                             ';
                                         }
                                 
@@ -340,9 +340,7 @@ session_start();
                                             while ($item = $Reviews->fetch()) {
                                                 echo '
                                                     <div class="reviews-container-admin-panel">
-                                                        <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.</div>
-                                                        <div class="wachtwoord-vergeten-berichten-bericht">Rating: ' . $item['reis_review_beoordeling'] . '</div>
-                                                        <div class="wachtwoord-vergeten-berichten-bericht">Review: ' . $item['reis_review_bericht'] . '</div>
+                                                        <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.' . $item['reis_review_beoordeling'] . '.' . $item['reis_review_bericht'] . '</div>
                                                     </div>
                                                 ';
                                             }
