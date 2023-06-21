@@ -52,10 +52,10 @@
                         <div class="afbeelding-container">
                             <img class="main-afbeelding" src="Images/indexzomer.png" alt=""></img>
                             <div class="extra-afbeeldingen-container">
-                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-links-boven" src="Images/indexzomer.png" alt="">
-                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-rechts-boven" src="Images/indexzomer.png" alt="">
-                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-links-onder" src="Images/indexzomer.png" alt="">
-                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-rechts-onder" src="Images/indexzomer.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-links-boven" src="Images/index.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-rechts-boven" src="Images/indexwinter.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-links-onder" src="Images/indexextra.png" alt="">
+                                <img class="extra-afbeeldingen" id="reis-informatie-extra-afbeelding-rechts-onder" src="Images/index3.png" alt="">
                             </div>
                         </div>
                         <div class="informatie-text-container">
@@ -71,24 +71,33 @@
                             </div>
                             <div class="reis-informatie-title">' . $item['reis_gemiddelde_review'] . '/10 - Beoordeeld</div>
                             <div class="reis-voorzieningen">
-                                <div>Populaire voorzieningen</div>
-                                <div>Airco</div>
-                                <div>Gratis wifi</div>
-                                <div>Ontbijt inbegrepen</div>
+                                <div class="populair-container">Populaire voorzieningen</div>
+                                <div><i class="fa-solid fa-snowflake"></i> Airco</div>
+                                <div><i class="fa-solid fa-wifi"></i> Gratis wifi</div>
+                                <div><i class="fa-solid fa-mug-hot"></i> Ontbijt inbegrepen</div>
                             </div>
                         </div>
                         <div class="reis-boeken-button">
                                 <form action="reis-boekingen.php" method="POST" class="form-reis-boeken">
                                     <input type="hidden" name="reis_id_to_book" value="' . $item['reis_id'] . '"></input>
                                     <div class="invulvelden-reis-boeken">
-                                        <label for="aantal-persoonen">Aantal persoonen: </label><br>
-                                        <input type="number" name="aantal-persoonen" min="1" max="' . $item['reis_max_people'] .'" value="1" required</input>
-                                        <label for="datum-aankomst">Aankomst datum: </label><br>
-                                        <input type="date" name="datum-aankomst" min="' . $date . '" max="' . $item['reis_available_end'] . '" value="' . $date .'" required</input>
-                                        <label for="datum-vertrek">Vertrek datum: </label><br>
-                                        <input type="date" name="datum-vertrek" min="' . $date_plus_one_day . '" max="' . $item['reis_available_end'] . '" required </input>
+                                    <div>
+                                        <label clas="reis-boeken-label" for="aantal-persoonen">Aantal persoonen: </label><br>
+                                        <input class="invulveld-reis-boeken" type="number" name="aantal-persoonen" min="1" max="' . $item['reis_max_people'] .'" value="1" required</input>
                                     </div>
-                                    <button type="submit" class="reis-informatie-button">boeken</button>
+                                    <div>
+                                        <label clas="reis-boeken-label" for="datum-aankomst">Aankomst datum: </label><br>
+                                        <input class="invulveld-reis-boeken" type="date" name="datum-aankomst" min="' . $date . '" max="' . $item['reis_available_end'] . '" value="' . $date .'" required</input>
+                                    </div>
+                                    <div>
+                                        <label clas="reis-boeken-label" for="datum-vertrek">Vertrek datum: </label><br>
+                                        <input class="invulveld-reis-boeken" type="date" name="datum-vertrek" min="' . $date_plus_one_day . '" max="' . $item['reis_available_end'] . '" required </input>
+                                    </div>
+                                        <div clas="reis-boeken-confirm-button-container">
+                                        <button type="submit" class="reis-informatie-button">boeken</button>
+                                    </div>
+                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -100,7 +109,6 @@
             ?>
        
        
-
     </main>
     <?php 
         include_once("footer.php");

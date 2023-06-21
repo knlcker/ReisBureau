@@ -60,7 +60,7 @@ function isPresent($waarde)
                                                                                                                                 } ?>></input>
             </div>
             <div class="submit-zoeken-reis">
-                <input type="submit" name="Zoeken" value="Zoeken">
+                <input class="zoeken-button" type="submit" name="Zoeken" value="Zoeken">
                 </input>
             </div>
         </form>

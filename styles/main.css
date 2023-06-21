@@ -87,6 +87,7 @@ a{
     justify-content: space-around;
     align-items: center;
     padding-top: 50px;
+    gap: 20px;
 
     position: relative;
     text-align: center;
@@ -113,7 +114,7 @@ a{
 }
 .vacation-category-text-decoration{
     position: absolute;
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     text-shadow: -1px 1px 0 black;
     border: none;
@@ -1167,18 +1168,23 @@ a{
     width: 30%;
     height: 15%;
     margin-bottom: 140px;
+
 }
 .reis-informatie-button{
     width: 100%;
-    height: 100%;
-    background-color: darkgray;
+    height: 30px;
+    background-color: rgb(105, 229, 80);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s;
+    margin-top: 20px;
+
+
 }
 .reis-informatie-button:hover{
-    background-color: gray;
+    background-color: rgb(80, 229, 115);
+    transform: scale(1.1);
 }
 .reis-informatie-container{
     width: 70%;
@@ -1222,10 +1228,16 @@ a{
 
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 .informatie-text{
     width: 50%;
     height: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 150px;
 }
 #reis-informatie-extra-afbeelding-links-boven{
     padding-left: 10px;
@@ -1250,6 +1262,17 @@ a{
 .reis-voorzieningen{
     width: 100%;
     height: auto;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+
+}
+.populair-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .reis-boeken-button{
     width: 	50%;
@@ -1257,15 +1280,29 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.reis-boeken-label{
+    display: block;
+    width: 100%;
 }
 .invulvelden-reis-boeken{
-    
+    width: 100%;
+    height: 100%;
 }
 .form-reis-boeken{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.reis-boeken-confirm-button-container{
+   width: 100%;
+   height: 100%;
+}
+.invulveld-reis-boeken{
+    width: 150px;
+    height: 30px;
 }
 .over-ons-container{
     height: 195vh;
@@ -1277,7 +1314,7 @@ a{
 }
 .over-ons-text{
     width: 50%;
-    height: 65%;
+    height: auto;
     background-color: white;
     border-radius: 25px;
     -webkit-box-shadow: 0px 0px 17px -3px#002ec4;
@@ -1311,6 +1348,7 @@ a{
 .contact-page{
     width: 80%;
     height: 80%;
+    background-color: white;
 
     display: flex;
     flex-direction: row;
@@ -1346,12 +1384,18 @@ a{
     min-height: 100px;
     width: auto;
     height: auto;
-    border: none;
+    border: solid 1px;
+
 }
 .contact-message{
     gap: 20px;
     display: flex;
     flex-direction: column;
+}
+.wachtwoord-vergeten-bericht-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .recensie-main{
@@ -1377,6 +1421,13 @@ a{
     display: flex;
     flex-direction: column;
 }
+.zoeken-button{
+    width: 150px;
+    height: 25px;
+    border-radius: 15px;
+    border: solid 1px;
+    background-color: white;
+}
 
 @media only screen and (max-width: 1000px) {
     .account-menu-contents {
@@ -1396,8 +1447,8 @@ a{
         justify-content: center;
     }
     .vacation-category-text-decoration{
-        font-size: 14px;
-
+        font-size: 12px;
+    }
     .footer-top{
         padding: 30px 25px 0 25px;
     }
@@ -1406,4 +1457,40 @@ a{
         width: 100%;
         padding: 15px 25px 0 25px;
     }
-  }
+    .reis-container{
+        width: 90%;
+    }
+    .form-reis-informatie{
+        width: 50%;
+    }
+    .reis-informatie-container{
+        width: 90%;
+    }
+    .informatie-text{
+        padding-left: 80px;
+    }
+    .account-content-account-information-component{
+        height: 110px;
+        min-width: 230px;
+    }
+    .contact-page-bericht{
+        max-width: 300px;
+        max-height: 100px;
+        min-width: 100px;
+    }
+    .contact-page-right-container{
+        font-size: 8px;
+    }
+    .over-ons-text{
+        width: 80%;
+    }
+    .reis-category-container{
+        gap: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }     
+    .reis-category-image{
+        height: 200px;
+    }                  
+}
+
