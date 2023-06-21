@@ -16,9 +16,9 @@
             	</div>
                 <div class="footer-text-container">
                     <h1 class="footer-category-text-header">Reizen</h1>
-                    <a href="reis-informatie.php" class="footer-category-text">Zomer</a>
-                    <a href="reis-informatie.php" class="footer-category-text">Winter</a>
-                    <a href="reis-informatie.php" class="footer-category-text">Populaire</a>
+                    <a href="homepage-reiszoeken.php" class="footer-category-text">Zomer</a>
+                    <a href="homepage-reiszoeken.php" class="footer-category-text">Winter</a>
+                    <a href="homepage-reiszoeken.php" class="footer-category-text">Populaire</a>
                 </div>
                 <div class="footer-text-container">
                 <h1 class="footer-category-text-header">Account</h1>
