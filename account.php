@@ -159,7 +159,14 @@ session_start();
                                                         </div>
                                                     </div>                                                        
                                                     <div class="admin-panel-geboekte-reis-annuleren-container">
-                                                        <div class="admin-panel-geboekte-reis-annuleren-button">Annuleren</div>                                                    
+                                                        <form action="reis-annuleren.php" method="POST">
+                                                            <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
+                                                            <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
+                                                        </form>
+                                                        <form action="" method="POST">
+                                                            <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
+                                                            <button type="hidden" class="admin-panel-geboekte-reis-review-button">Beoordelen</button>
+                                                        </form>                                                    
                                                     </div>
                                                 </div>
                                             </div>';
