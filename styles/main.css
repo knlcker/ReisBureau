@@ -153,7 +153,7 @@ a{
 }
 
 .inloggen-information-container a{
-    color: #000000;
+    color:  #3F83D3;
 }
 
 .inloggen-image{
@@ -233,6 +233,7 @@ a{
 
 .underline-wachtwoord-vergeten{
     text-decoration: underline #3F83D3;
+    color: #3F83D3;
 }
 
 .inloggen-submit{
@@ -1346,5 +1347,14 @@ a{
 
     .admin-panel-geboekte-reis-item{
         font-size: 9pt;
+    }
+    .inloggen-image-container{
+        display: none;
+    }
+    .inloggen-information-container{
+        width: 100%;
+    }
+    .inloggen-page-container{
+        justify-content: center;
     }
   }

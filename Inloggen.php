@@ -56,7 +56,7 @@
                                         unset($_SESSION['error_message_register']);
                                     }
                                 ?>    
-                                <div class="underline-wachtwoord-vergeten">Wachtwoord vergeten?</div>
+                                <a href="contact-wachtwoord-vergeten.php" class="underline-wachtwoord-vergeten">Wachtwoord vergeten?</a>
 
                             </div>
                             <button class="inloggen-submit" type="submit">Log In</button>
