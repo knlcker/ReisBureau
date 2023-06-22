@@ -376,8 +376,9 @@ session_start();
 
                                             ';
                             }
-
-
+                            ?>
+                            </div>
+                                
                                 <div id="account-content-reviews">
                                         <?php
                                             $Reviews = $connectie->prepare("SELECT * FROM boekingen");
@@ -393,7 +394,7 @@ session_start();
                                             }
                                
                                 
-                                </div>
+                                
 
                             ?>
                         </div>
