@@ -163,7 +163,7 @@ session_start();
                                                             <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                             <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
                                                         </form>';
-                                        if ($date < $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null) {
+                                        if ($date > $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null) {
                                             echo '
                                                             <form action="recensie.php" method="POST">
                                                                 <input type="hidden" name="geboekte_reis_to_review" value="' . $mijnReisItem['boeking_id'] . '"></input>
@@ -230,7 +230,12 @@ session_start();
                                                     </div>
                                                 </div>
                                                 <div class="admin-panel-reis-item-reis-container-edit-delete">
-                                                    <div class="admin-panel-reis-item-icon"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i></div>
+                                                    <form action="reis-bewerken.php" method="POST">
+                                                        <input type="hidden" name="reis_id_to_edit" value="' . $item['reis_id'] . '" ></input>
+                                                        <button type="submit" class="delete-button">
+                                                            <i class="fa-solid fa-pen-to-square" style="color: #000000;"></i>
+                                                        </button>
+                                                    </form>
                                                     <form action="reis-delete.php" method="POST">
                                                         <input type="hidden" name="reis_id_to_delete" value="' . $item['reis_id'] . '" ></input>
                                                         <button type="submit" class="delete-button">
@@ -377,32 +382,32 @@ session_start();
                                             ';
                             }
                             ?>
-                            </div>
-                                
-                                <div id="account-content-reviews">
-                                        <?php
-                                            $Reviews = $connectie->prepare("SELECT * FROM boekingen");
-                                            $Reviews->execute([]);
-                                
-                                        
-                                            while ($item = $Reviews->fetch()) {
-                                                echo '
+                        </div>
+
+                        <div id="account-content-reviews">
+                            <?php
+                            $Reviews = $connectie->prepare("SELECT * FROM boekingen");
+                            $Reviews->execute([]);
+
+
+                            while ($item = $Reviews->fetch()) {
+                                echo '
                                                     <div class="reviews-container-admin-panel">
                                                         <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.' . $item['reis_review_beoordeling'] . '.' . $item['reis_review_bericht'] . '</div>
                                                     </div>
                                                 ';
-                                            }
-                               
-                                
-                                
+                            }
+
+
+
 
                             ?>
                         </div>
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         </div>
 
