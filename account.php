@@ -112,11 +112,6 @@ session_start();
                                 </div>
                             </div>
                         </div>
-                        <div class="account-content-account-information-change-container">
-                            <div class="account-content-account-information-change-button">
-                                Wijzig Gegevens
-                            </div>
-                        </div>
                     </div>
                     <div id="account-content-mijn-boekingen">
 
@@ -168,15 +163,16 @@ session_start();
                                                             <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                             <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
                                                         </form>';
-                                                        if($date < $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null){
-                                                            echo'
+                                        if ($date > $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null) {
+                                            echo '
                                                             <form action="recensie.php" method="POST">
                                                                 <input type="hidden" name="geboekte_reis_to_review" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                                 <button type="hidden" class="admin-panel-geboekte-reis-review-button">Beoordelen</button>
                                                             </form>
                                                             
                                                             ';
-                                                        } echo '
+                                        }
+                                        echo '
                                                     </div>
                                                 </div>
                                             </div>';
@@ -193,9 +189,6 @@ session_start();
                             </div>
                             <div class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-geboekte-reizen" onclick="adminPanelGeboekteReizen()">
                                 Geboekte Reizen
-                            </div>
-                            <div class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-locaties-beheren" onclick="adminPanelLocatiesBeheren()">
-                                Locaties Beheren
                             </div>
                             <a href="reis-aanmaken-editen.php" class="account-content-admin-panel-options-button" id="account-content-admin-panel-options-button-reis-aanmaken">
                                 Reis Aanmaken
@@ -254,7 +247,7 @@ session_start();
                             </div>
 
                             <div id="account-content-admin-panel-content-container-geboekte-reizen">
-                            <?php
+                                <?php
                                 $geboekteReizen = $connectie->prepare("SELECT boeking_id, boeking_reis_start, boeking_reis_end, boeking_aantal_personen, boeking_price, reis_review_beoordeling, reis_location_country, reis_location_city, reis_title, reis_description, user_firstname, user_lastname 
                                     FROM boekingen 
                                     INNER JOIN users 
@@ -312,83 +305,85 @@ session_start();
                                 }
                                 ?>
                             </div>
-                            <div id="account-content-admin-panel-content-container-locaties-beheren">
-                                <div class="locaties-beheren-container">
-                                    <div class="locaties-beheren-buttons">
-                                        <div class="locaties-beheren-button">Toevoegen</div>
-                                        <div class="locaties-beheren-button">Verwijderen</div>
-                                    </div>
-                                    <div id="locatie-toevoegen">
-                                        <form class="form-land-toevoegen">
-                                            <label for="new-country">Nieuw Land</label><br>
-                                            <input type="text" name="new-country">
-                                            <button class="locaties-beheren-submit-button" type="submit">Toevoegen</button>
-                                        </form>
-                                    </div>
-                                    <div id="locatie-verwijderen"></div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
                     <div id="account-content-owner-panel">
-                            
+                        <div class="owner-panel">
+                            <div class="owner-panel-options">
+                                <div class="owner-panel-options-button clickable" onclick="openAccountDeleter()">DELETE ACCOUNT</div>
+                                <div class="owner-panel-options-button clickable" onclick="openPermissionGiver()">GIVE ADMIN PERMISSIONS</div>
+                                <div class="owner-panel-options-button clickable" onclick="openPermissionTaker()">TAKE ADMIN PERMISSIONS</div>
+                            </div>
+                            <form action="account-edit-management.php" class="owner-panel-form" method="POST" id="account-deleter">
+                                <input type="email" name="account_deleter_email" placeholder="E-mail..."></input>
+                                <button type="submit">Account verwijderen?</button>
+                            </form>
+                            <form action="account-edit-management.php" class="owner-panel-form" method="POST" id="permission-giver">
+                                <input type="email" name="permission_giver_email" placeholder="E-mail..."></input>
+                                <button type="submit">Admin maken?</button>
+                            </form>
+                            <form action="account-edit-management.php" class="owner-panel-form" method="POST" id="permission-taker">
+                                <input type="email" name="permission_taker_email" placeholder="E-mail..."></input>
+                                <button type="submit">admin krachten afnemen?</button>
+                            </form>
+                        </div>
                     </div>
-                    
+
                     <div id="account-content-berichten-container">
                         <div class="account-content-berichten-panel-options">
                             <div class="account-content-admin-panel-options-button" id="account-content-WW-panel-options-button-vergeten" onclick="berichtenWwVergeten()">
                                 WW vergeten
                             </div>
                             <div class="account-content-admin-panel-options-button" id="account-content-berichten-panel-options-button-normale" onclick="berichten()">
-                                 Berichten
+                                Berichten
                             </div>
                             <div class="account-content-admin-panel-options-button" id="account-content-berichten-panel-options-button-berichten" onclick="berichtenReviews()">
                                 Reviews
                             </div>
                         </div>
-                            
-                    
-                            <div id="account-content-berichten-WW-vergeten">
-                                <?php
-                                    $BerichtWV = $connectie->prepare("SELECT * FROM wachtwoord_vergeten");
-                                    $BerichtWV->execute([]);
 
-                                
-                                
-                                        while ($item = $BerichtWV->fetch()) {
-                                            echo '
+
+
+                        <div id="account-content-berichten-WW-vergeten">
+                            <?php
+                            $BerichtWV = $connectie->prepare("SELECT * FROM wachtwoord_vergeten");
+                            $BerichtWV->execute([]);
+
+
+
+                            while ($item = $BerichtWV->fetch()) {
+                                echo '
+
                                                 <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '.</div>
                                                 
                                             ';
-                                        }
-                                
-                                ?>
-                            </div>
+                            }
 
-                            <div id="account-content-berichten">
-                                <?php
-                                    $Bericht = $connectie->prepare("SELECT * FROM berichten");
-                                    $Bericht->execute([]);
+                            ?>
+                        </div>
 
-                                
-                                
-                                        while ($item = $Bericht->fetch()) {
-                                            echo '
+                        <div id="account-content-berichten">
+                            <?php
+                            $Bericht = $connectie->prepare("SELECT * FROM berichten");
+                            $Bericht->execute([]);
+
+
+
+                            while ($item = $Bericht->fetch()) {
+                                echo '
                                                 <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '</div>
 
                                             ';
-                                        }
-                                
-                                ?>
-                                </div>
+                            }
+
 
                                 <div id="account-content-reviews">
-
-
                                         <?php
                                             $Reviews = $connectie->prepare("SELECT * FROM boekingen");
                                             $Reviews->execute([]);
+                                
+                                        
                                             while ($item = $Reviews->fetch()) {
                                                 echo '
                                                     <div class="reviews-container-admin-panel">
@@ -396,14 +391,18 @@ session_start();
                                                     </div>
                                                 ';
                                             }
-                                
-                                    ?> 
+                               
                                 
                                 </div>
-                            </div>
+
+                            ?>
+                        </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
     </main>
@@ -454,19 +453,11 @@ session_start();
         function adminPanelAlleReizen() {
             document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "flex";
             document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "none";
-            document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "none";
         }
 
         function adminPanelGeboekteReizen() {
             document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "none";
             document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "flex";
-            document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "none";
-        }
-
-        function adminPanelLocatiesBeheren() {
-            document.getElementById("account-content-admin-panel-content-container-alle-reizen").style.display = "none";
-            document.getElementById("account-content-admin-panel-content-container-geboekte-reizen").style.display = "none";
-            document.getElementById("account-content-admin-panel-content-container-locaties-beheren").style.display = "flex";
         }
 
         function berichtenReviews() {
@@ -474,11 +465,13 @@ session_start();
             document.getElementById("account-content-berichten").style.display = "none";
             document.getElementById("account-content-reviews").style.display = "flex";
         }
+
         function berichtenWwVergeten() {
             document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
             document.getElementById("account-content-berichten").style.display = "none";
             document.getElementById("account-content-reviews").style.display = "none";
         }
+
         function berichten() {
             document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
             document.getElementById("account-content-berichten").style.display = "flex";
@@ -511,6 +504,24 @@ session_start();
             document.getElementById("account-menu-berichten").style.color = "#4987FF";
             document.getElementById("account-content-berichten-container").style.display = "flex";
             <?php $accountCurrentOption = "Berichten"; ?>
+        };
+
+        function openAccountDeleter() {
+            document.getElementById("account-deleter").style.display = "flex";
+            document.getElementById("permission-giver").style.display = "none";
+            document.getElementById("permission-taker").style.display = "none";
+        };
+
+        function openPermissionGiver() {
+            document.getElementById("account-deleter").style.display = "none";
+            document.getElementById("permission-giver").style.display = "flex";
+            document.getElementById("permission-taker").style.display = "none";
+        };
+
+        function openPermissionTaker() {
+            document.getElementById("account-deleter").style.display = "none";
+            document.getElementById("permission-giver").style.display = "none";
+            document.getElementById("permission-taker").style.display = "flex";
         };
     </script>
 </body>
