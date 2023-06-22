@@ -344,6 +344,7 @@ session_start();
                         </div>
 
 
+
                         <div id="account-content-berichten-WW-vergeten">
                             <?php
                             $BerichtWV = $connectie->prepare("SELECT * FROM wachtwoord_vergeten");
@@ -353,6 +354,7 @@ session_start();
 
                             while ($item = $BerichtWV->fetch()) {
                                 echo '
+
                                                 <div class="wachtwoord-vergeten-berichten-id">' . $item['bericht_id'] . '.' . $item['bericht'] . '.</div>
                                                 
                                             ';
@@ -389,28 +391,12 @@ session_start();
                                                     </div>
                                                 ';
                                             }
-                                
-                                    ?> 
+                               
                                 
                                 </div>
 
                             ?>
                         </div>
-
-                        <div id="account-content-reviews">
-
-
-
-
-                            while ($item = $Reviews->fetch()) {
-                            echo '
-                            <div class="reviews-container-admin-panel">
-                                <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.' . $item['reis_review_beoordeling'] . '.' . $item['reis_review_bericht'] . '</div>
-                            </div>
-                            ';
-                            }
-
-                            ?>
 
                         </div>
                     </div>
