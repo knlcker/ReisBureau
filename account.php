@@ -163,7 +163,7 @@ session_start();
                                                             <input type="hidden" name="geboekte_reis_to_delete" value="' . $mijnReisItem['boeking_id'] . '"></input>
                                                             <button type="hidden" class="admin-panel-geboekte-reis-annuleren-button">Annuleren</button>
                                                         </form>';
-                                        if ($date > $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null) {
+                                        if ($date < $mijnReisItem['boeking_reis_end'] && $mijnReisItem['reis_review_beoordeling'] == null) {
                                             echo '
                                                             <form action="recensie.php" method="POST">
                                                                 <input type="hidden" name="geboekte_reis_to_review" value="' . $mijnReisItem['boeking_id'] . '"></input>
