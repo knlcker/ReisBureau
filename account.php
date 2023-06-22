@@ -375,6 +375,25 @@ session_start();
                                             ';
                             }
 
+
+                                <div id="account-content-reviews">
+                                        <?php
+                                            $Reviews = $connectie->prepare("SELECT * FROM boekingen");
+                                            $Reviews->execute([]);
+                                
+                                        
+                                            while ($item = $Reviews->fetch()) {
+                                                echo '
+                                                    <div class="reviews-container-admin-panel">
+                                                        <div class="wachtwoord-vergeten-berichten-id">' . $item['reis_id'] . '.' . $item['reis_review_beoordeling'] . '.' . $item['reis_review_bericht'] . '</div>
+                                                    </div>
+                                                ';
+                                            }
+                                
+                                    ?> 
+                                
+                                </div>
+
                             ?>
                         </div>
 
@@ -458,18 +477,19 @@ session_start();
         function berichtenReviews() {
             document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
             document.getElementById("account-content-berichten").style.display = "none";
+            document.getElementById("account-content-reviews").style.display = "flex";
         }
 
         function berichtenWwVergeten() {
             document.getElementById("account-content-berichten-WW-vergeten").style.display = "flex";
             document.getElementById("account-content-berichten").style.display = "none";
-            document.getElementById("").style.display = "none";
+            document.getElementById("account-content-reviews").style.display = "none";
         }
 
         function berichten() {
             document.getElementById("account-content-berichten-WW-vergeten").style.display = "none";
             document.getElementById("account-content-berichten").style.display = "flex";
-            document.getElementById("").style.display = "none";
+            document.getElementById("account-content-reviews").style.display = "none";
         }
 
         function activeOwnerPanel() {
